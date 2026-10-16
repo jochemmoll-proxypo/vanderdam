@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - index.html
+      - CNAME
       - assets/**
       - stories/**
       - .github/workflows/pages.yml
@@ -31,6 +32,7 @@ jobs:
         run: |
           mkdir public
           cp index.html public/
+          if [ -f CNAME ]; then cp CNAME public/; fi
           cp -r assets stories public/
       - uses: actions/upload-pages-artifact@v3
         with:
