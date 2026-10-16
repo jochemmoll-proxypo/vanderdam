@@ -1,42 +1,35 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Vanderdam.com — coming soon!" />
-    <title>Vanderdam.com(ing) soon!</title>
-    <style>
-      :root {
-        color-scheme: light;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #182c28;
-        background: #f5f3ec;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        min-height: 100svh;
-        margin: 0;
-        display: grid;
-        place-items: center;
-        padding: 2rem;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: clamp(2rem, 7vw, 6rem);
-        font-weight: 600;
-        letter-spacing: -0.055em;
-        line-height: 1.15;
-        text-align: center;
-        overflow-wrap: anywhere;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Vanderdam.com(ing) soon!</h1>
-    </main>
-  </body>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Elke dag een bijzonder sportverhaal uit het verleden. Gebeurd op deze dag, opnieuw verteld.">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>This Day in Sports — Sportgeschiedenis, dag voor dag</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="./" aria-label="This Day in Sports, homepage">THIS DAY<span>IN SPORTS<span class="dot">.</span></span></a>
+    <nav aria-label="Hoofdnavigatie"><a href="#archive">Het archief <span aria-hidden="true">↗</span></a><a href="#about">Het idee</a></nav>
+  </header>
+  <main>
+    <div class="edition"><span>SPORTGESCHIEDENIS, DAG VOOR DAG</span><time id="today"></time></div>
+    <section class="intro" aria-labelledby="headline">
+      <p class="eyebrow"><span class="live-dot"></span> ELKE DAG EEN NIEUW VERHAAL</p>
+      <h1 id="headline">Een dag als vandaag.<br>Een moment voor <em>altijd.</em></h1>
+      <p class="intro-copy">De records. De doorbraken. De momenten die groter werden dan de sport. Ontdek wat er op deze dag gebeurde.</p>
+    </section>
+    <section id="daily" class="daily" aria-label="Het verhaal van vandaag" aria-live="polite">
+      <div class="date-panel"><span>OP DEZE DAG</span><strong id="day-number"></strong><span id="month-name"></span><div class="track" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="date-caption">ÉÉN DATUM. ZOVEEL GESCHIEDENIS.</span></div>
+      <div class="story-panel" id="story"><p class="eyebrow">VANDAAG IN DE SPORT</p><h2>Even terug in de tijd…</h2><p>Het verhaal wordt geladen.</p></div>
+    </section>
+    <section id="article" class="article" hidden></section>
+    <section id="archive" class="archive"><div class="section-heading"><h2>Eerder op deze dag.</h2><span>HET ARCHIEF</span></div><div id="archive-list"><p>Het archief wordt geladen.</p></div></section>
+    <section id="about" class="about"><p class="eyebrow">HET IDEE</p><h2>De kalender gaat verder.<br>De verhalen blijven.</h2><div><p>Sportgeschiedenis zit vol momenten die het verdienen om opnieuw verteld te worden. Hier vind je elke dag een verhaal over een prestatie die op precies die kalenderdatum plaatsvond.</p><p>Onze verhalen worden met AI geresearcht en geschreven, met links naar de gebruikte bronnen. Feiten blijven controleerbaar; geschiedenis verdient meer dan een mooie kop.</p></div></section>
+  </main>
+  <footer><a class="footer-brand" href="./">THIS DAY IN SPORTS.</a><span>Een project van Vanderdam · <span id="year"></span></span><a href="#about">Over de verhalen ↑</a></footer>
+  <noscript><p>Schakel JavaScript in om de verhalen en het archief te lezen.</p></noscript>
+</body>
 </html>
