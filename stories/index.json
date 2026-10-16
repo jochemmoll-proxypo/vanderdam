@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "date": "2026-10-16",
+    "event_date": "1976-10-16",
+    "title": "A 69-Yard Miracle: Ove Johansson’s Record That Stopped the Clock",
+    "sport": "American football",
+    "intro": "On October 16, 1976, a relatively unknown Swedish kicker for Abilene Christian University launched a boot that became the longest field goal ever recorded in organized football. The 69-yard score on the final play of the first half remains one of the sport’s most improbable feats and a landmark moment in kicking history.",
+    "paragraphs": [
+      "What happened: on October 16, 1976, Ove Claes Johansson of Abilene Christian kicked a 69-yard field goal on the final play of the first half at Shotwell Stadium, giving ACU an advantage in a 17–0 homecoming victory over East Texas State. That kick has been recorded by the university as a world-record 69-yard field goal and is listed in Abilene Christian’s accounts of the game. ([acusports.com](https://acusports.com/news/1976/10/16/4887))",
+      "The man and the moment: Johansson, a Swedish-born athlete who had not long before taken up American football, was in only his sixth game when the kick sailed through the uprights before a Homecoming crowd of roughly 13,000. ACU’s own retrospective reporting and university obituary-style remembrances describe how Johansson’s rapid rise to the team produced the attempt and the successful 69-yarder that autumn afternoon. ([acu.edu](https://acu.edu/2023/10/05/acu-remembers-ove-johansson/))",
+      "Why it matters in the record books: the kick is widely identified in collegiate and historical summaries as the longest field goal in college-level competition (and, for decades, the longest recorded field goal at any level). Official collegiate record compilations note that Abilene Christian was an NAIA member at the time, and that Johansson’s 69-yard kick is the furthest recorded in collegiate play. That distinction — longest at any collegiate level though outside the NCAA’s membership at the time — is regularly cited in NCAA reference materials and historical records. ([fs.ncaa.org](https://fs.ncaa.org/Docs/stats/football_records/2020/Collegiate.pdf?utm_source=openai))",
+      "A remarkable coincidence: the afternoon produced multiple extraordinary kicks. In College Station the same day Texas A&M’s Tony Franklin connected on 64- and 65-yard field goals against Baylor — a pair of kicks that, by themselves, rewrote modern NCAA distance marks and helped ensure October 16, 1976 would be remembered as a singular day for placekicking. Texas A&M’s official athletic history records Franklin’s 64- and 65-yard boots on that date. ([12thman.com](https://12thman.com/news/2024/07/25/two-time-all-american-franklin-named-to-swc-hall-of-fame))",
+      "Legacy and perspective: Johansson’s 69-yarder stood as the benchmark for decades and has been the touchstone whenever long kicks re-emerge in the national conversation. American and national press accounts over the years have revisited the kick as subsequent long attempts approached but rarely equaled the distance. Modern reporting around more recent extreme kicks has repeatedly referenced Johansson’s 1976 boot as the historic high-water mark until the 2020s. ([latimes.com](https://www.latimes.com/archives/la-xpm-1991-10-19-sp-605-story.html?utm_source=openai))",
+      "In short, October 16, 1976 left an indelible imprint: in the space of a single afternoon, kickers from two Texas programs produced some of the longest field goals in gridiron history, with Ove Johansson’s 69-yard attempt rising to the top as an extraordinary and enduring achievement that still prompts disbelief and admiration among historians of the game. ([acusports.com](https://acusports.com/news/1976/10/16/4887))"
+    ],
+    "sources": [
+      {
+        "title": "October 16, 1976 - Abilene Christian Athletics",
+        "url": "https://acusports.com/news/1976/10/16/4887"
+      },
+      {
+        "title": "ACU Remembers: Ove Johansson (Abilene Christian University)",
+        "url": "https://acu.edu/2023/10/05/acu-remembers-ove-johansson/"
+      },
+      {
+        "title": "Collegiate Football Records (NCAA special reference noting Johansson kick)",
+        "url": "https://fs.ncaa.org/Docs/stats/football_records/2020/Collegiate.pdf"
+      },
+      {
+        "title": "Two-Time All-American Franklin Named to SWC Hall of Fame (Texas A&M official athletics)",
+        "url": "https://12thman.com/news/2024/07/25/two-time-all-american-franklin-named-to-swc-hall-of-fame"
+      },
+      {
+        "title": "Putting the Record Between the Uprights (Los Angeles Times retrospective)",
+        "url": "https://www.latimes.com/archives/la-xpm-1991-10-19-sp-605-story.html"
+      }
+    ]
+  }
+]
