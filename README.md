@@ -1,6 +1,6 @@
 # This Day in Sports
 
-Nederlandstalige sportgeschiedenis op de kalenderdatum waarop het gebeurde.
+Engelstalige sportgeschiedenis op de kalenderdatum waarop het gebeurde.
 Statische website, zonder frontend-dependencies, geschikt voor GitHub Pages.
 
 ## Lokaal ontwikkelen
@@ -34,7 +34,7 @@ commits met GITHUB_TOKEN starten zelf geen andere push-workflows.
 ## Redactionele aanpak
 
 De AI zoekt een sportprestatie op precies dezelfde dag en maand in een eerder jaar,
-verifieert feiten aan meerdere bronnen en schrijft een origineel Nederlands verhaal.
+verifieert feiten aan meerdere bronnen en schrijft een origineel Engels verhaal.
 De publicatiecontrole vereist twee verschillende brondomeinen, URL's uit de daadwerkelijke
 webresearch, een geldige historische datum en een volledig verhaal. Dit is geen garantie
 op foutloze feiten; het blijft AI-research zonder menselijke eindredactie. De site
