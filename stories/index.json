@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-10-20",
+    "event_date": "2004-10-20",
+    "title": "Hell Freezes Over: How the 2004 Red Sox Rewrote Postseason History",
+    "sport": "Baseball",
+    "intro": "On October 20, 2004, at Yankee Stadium, the Boston Red Sox completed an improbable comeback to win Game 7 of the American League Championship Series, becoming the first team in Major League Baseball history to win a best-of-seven postseason series after trailing three games to none.",
+    "paragraphs": [
+      "The decisive result was emphatic: Boston beat the New York Yankees 10–3 on October 20, 2004, to clinch the AL pennant and force a World Series appearance for the first time since 1986. That Game 7 ended a sequence of late-inning heroics by the Red Sox across the series and capped a turnaround that had begun with David Ortiz’s extra‑inning clutch hits in Games 4 and 5 and Curt Schilling’s gutsy outing in Game 6. ([mlb.com](https://www.mlb.com/video/red-sox-clinch-al-pennant-c7036585))",
+      "Game 7 itself was punctuated by a second‑inning explosion. With the bases loaded, Johnny Damon belted the first pitch from reliever Javier Vázquez over the right‑field wall for a grand slam that turned a 2–0 Boston lead into 6–0 in an instant; Damon finished the night with two home runs and six RBIs. Derek Lowe, starting on two days’ rest, allowed one run in six innings to earn the victory. The box score and play‑by‑play from contemporary records confirm the date, score and individual contributions. ([washingtonpost.com](https://www.washingtonpost.com/archive/sports/2004/10/21/cursed-to-first/c0f9f1b3-8e92-4d9b-82bf-3014ffffd3d7/))",
+      "The comeback carried historical weight beyond the scoreboard. No MLB team had ever recovered from a 3–0 deficit in a best‑of‑seven postseason series; Boston’s win made them the first in Major League history and only the third in the major North American professional sports leagues to accomplish the feat. The turnabout changed perceptions of inevitability in postseason series and immediately became part of baseball’s canonical moments. ([baseball-reference.com](https://www.baseball-reference.com/postseason/2004_ALCS.shtml?utm_source=openai))",
+      "Context helps explain why the moment mattered so deeply to fans. The Red Sox entered the 2004 postseason still haunted by an 86‑year World Series drought and decades of painful playoff near‑misses against the Yankees and others. The ALCS comeback — sealed on October 20, 2004 — broke through more than a single series result; it reshaped the narrative around the franchise and set the stage for the team’s run to end the drought four days later in the World Series. Contemporary reporting and postseason records document both the ALCS clincher and the Red Sox’s subsequent World Series sweep. ([washingtonpost.com](https://www.washingtonpost.com/archive/sports/2004/10/21/cursed-to-first/c0f9f1b3-8e92-4d9b-82bf-3014ffffd3d7/))",
+      "More than two decades on, the October 20, 2004 game remains a touchstone for postseason resilience: an instance when clutch hitting, unconventional managerial decisions and a sequence of small but decisive plays combined to overturn a near‑certain outcome. The Red Sox’s recovery from 0–3 is still regularly cited by statisticians, historians and journalists as one of the most remarkable single‑series reversals in modern team sports. ([sabr.org](https://sabr.org/gamesproj/game/october-20-2004-hell-freezes-over-red-sox-complete-historic-alcs-comeback-over-yankees-in-game-7/))"
+    ],
+    "sources": [
+      {
+        "title": "2004 ALCS - Boston Red Sox over New York Yankees (4-3) | Baseball-Reference.com",
+        "url": "https://www.baseball-reference.com/postseason/2004_ALCS.shtml"
+      },
+      {
+        "title": "10/20/04: Red Sox advance to the World Series (MLB video and recap)",
+        "url": "https://www.mlb.com/video/red-sox-clinch-al-pennant-c7036585"
+      },
+      {
+        "title": "October 20, 2004: 'Hell freezes over'; Red Sox complete historic ALCS comeback (SABR Games Project)",
+        "url": "https://sabr.org/gamesproj/game/october-20-2004-hell-freezes-over-red-sox-complete-historic-alcs-comeback-over-yankees-in-game-7/"
+      },
+      {
+        "title": "Cursed to First — In an Epic Comeback, Boston Stuns N.Y. to Win AL Pennant (The Washington Post, Oct. 21, 2004)",
+        "url": "https://www.washingtonpost.com/archive/sports/2004/10/21/cursed-to-first/c0f9f1b3-8e92-4d9b-82bf-3014ffffd3d7/"
+      },
+      {
+        "title": "2004 World Series - Boston Red Sox over St. Louis Cardinals (4-0) | Baseball-Reference.com",
+        "url": "https://www.baseball-reference.com/postseason/2004_WS.shtml"
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "event_date": "1964-10-19",
     "title": "From Last to First: Mike Larrabee’s Comeback Gold in Tokyo",
