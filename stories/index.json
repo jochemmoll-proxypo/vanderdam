@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-10-30",
+    "event_date": "1974-10-30",
+    "title": "Rumble in the Jungle: How Muhammad Ali Reclaimed the Heavyweight Crown",
+    "sport": "Boxing",
+    "intro": "On October 30, 1974, in Kinshasa, Zaire, Muhammad Ali produced one of the most celebrated upsets in sporting history: an eighth-round knockout of the then‑undefeated world heavyweight champion George Foreman that restored Ali to the title and left an enduring legacy in boxing and popular culture. ([history.com](https://www.history.com/this-day-in-history/october-30/muhammad-ali-wins-the-rumble-in-the-jungle?utm_source=openai))",
+    "paragraphs": [
+      "The fight—marketed as the “Rumble in the Jungle”—took place at the Stade du 20 Mai (now Stade Tata Raphaël) before an estimated crowd of about 60,000 and a huge global television audience. Ali, 32, entered the ring as a heavy underdog against a 25‑year‑old Foreman who had demolished opponents with prodigious power and an undefeated record. The matchup was postponed from its original date and staged under extraordinary logistical and political circumstances in Zaire; the event’s scale and the presence of the Zaire ’74 music festival around it helped make the bout a global spectacle. ([alicenter.org](https://alicenter.org/roadwork-to-the-rumble/?utm_source=openai))",
+      "Ring statistics and contemporary reports record the finishing sequence precisely: Ali knocked Foreman down in the eighth round and the referee stopped the bout at 2:58 of that round, awarding Ali a knockout victory and the WBC/WBA world heavyweight titles. The result made Ali only the second fighter in boxing history, after Floyd Patterson, to regain the world heavyweight championship after having been stripped of it previously—an achievement widely noted at the time. ([boxrec.com](https://boxrec.com/wiki/index.php/Rumble_in_the_jungle?utm_source=openai))",
+      "The manner of victory added to the fight’s mythology. Ali employed a tactic that would come to be known as the “rope‑a‑dope,” deliberately leaning on the ropes to absorb Foreman’s blows while letting the younger champion expend energy; when Foreman tired, Ali seized the initiative and finished the match. Contemporary and later accounts credit that strategic approach—together with Ali’s timing and resilience—with turning a contest many expected to be one‑sided into an iconic comeback. ([alicenter.org](https://alicenter.org/roadwork-to-the-rumble/?utm_source=openai))",
+      "Beyond the ring, the Rumble in the Jungle had broader significance. It restored Ali’s sporting standing after the long interruption of his career in the 1960s, symbolized a high‑profile Black athletic triumph staged in Africa, and catalysed cultural work—most notably Leon Gast’s documentary When We Were Kings—that kept the fight prominent in public memory. Sports historians and boxing records continue to cite the bout when discussing the finest upsets, tactical masterstrokes and the global reach of heavyweight boxing in the 20th century. ([history.com](https://www.history.com/this-day-in-history/october-30/muhammad-ali-wins-the-rumble-in-the-jungle?utm_source=openai))",
+      "Fifty years on, the October 30, 1974, result remains a fixed point in sporting chronology: an underscored example of strategy prevailing over brute force, and a moment when a returning champion reclaimed not only a belt but also an indelible place in sporting history. The record books list the bout, the date and the knockout finish exactly as contemporaneous sources recorded them, preserving the factual core of a fight that has inspired generations of fans and fighters alike. ([boxrec.com](https://boxrec.com/wiki/index.php/Rumble_in_the_jungle?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Muhammad Ali wins the Rumble in the Jungle | October 30, 1974 | HISTORY",
+        "url": "https://www.history.com/this-day-in-history/october-30/muhammad-ali-wins-the-rumble-in-the-jungle"
+      },
+      {
+        "title": "George Foreman vs. Muhammad Ali - Rumble in the jungle | BoxRec",
+        "url": "https://boxrec.com/wiki/index.php/Rumble_in_the_jungle"
+      },
+      {
+        "title": "Today in History: October 30, Muhammad Ali defeats George Foreman in the \"Rumble in the Jungle\" | AP News",
+        "url": "https://apnews.com/article/1516ce528a24deb67054838cf0057c82"
+      },
+      {
+        "title": "Roadwork To The Rumble – Muhammad Ali Center (digital exhibit)",
+        "url": "https://alicenter.org/roadwork-to-the-rumble/"
+      }
+    ]
+  },
+  {
     "date": "2026-10-28",
     "event_date": "1966-10-28",
     "title": "Gaston Roelants’ Hour of Glory: Two World Marks in Leuven",
