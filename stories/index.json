@@ -1,5 +1,36 @@
 [
   {
+    "date": "2026-11-01",
+    "event_date": "1995-11-01",
+    "title": "Seven Points, Ten Goals: Mario Lemieux’s Masterclass on November 1, 1995",
+    "sport": "Ice hockey",
+    "intro": "On November 1, 1995, at the Civic Arena in Pittsburgh, Mario Lemieux produced one of the most dominant single-game performances of his storied career: the captain finished with one goal and six assists as the Pittsburgh Penguins routed the Tampa Bay Lightning 10–0. The line — 1–6–7 — was documented in contemporary reports and the official box score, and it remains a vivid example of Lemieux’s playmaking brilliance. ([hockey-reference.com](https://www.hockey-reference.com/boxscores/199511010PIT.html?utm_source=openai))",
+    "paragraphs": [
+      "Mario Lemieux’s night began early and never let up. The Penguins exploded in the first period, with Lemieux assisting on multiple goals and helping build a lead that the visiting Lightning could not overcome. By the final buzzer the scoreline read 10–0; Lemieux’s seven points came from a single goal and six assists, a stat line recorded in the game box score and reported in national press the following day. ([hockey-reference.com](https://www.hockey-reference.com/boxscores/199511010PIT.html?utm_source=openai))",
+      "Contemporary coverage underlined the rarity and completeness of Lemieux’s performance. The Washington Post noted that the outing was one of the few seven-point games of his career and described how Lemieux orchestrated Pittsburgh’s attack across all three periods. Local and national outlets framed the game as a display of both individual mastery and a team firing on all cylinders. ([washingtonpost.com](https://www.washingtonpost.com/archive/sports/1995/11/02/lemieuxs-7-points-sink-lightning-10-0/08a43ed1-c590-4477-841d-4d7ea634a50e/?utm_source=openai))",
+      "The six-assist total also placed Lemieux on the lists of players who have recorded unusually high single-game assist totals. Official NHL record listings of most assists in one game document multiple six-assist performances by elite players, and comprehensive box-score databases preserve Lemieux’s Nov. 1, 1995 entry as a clear instance of that accomplishment. Those sources give the precise game details and make the statistical case for the performance’s significance. ([records.nhl.com](https://records.nhl.com/records/skater-records/assists/most-assists-one-game?utm_source=openai))",
+      "Beyond the numbers, the game mattered because it arrived in the 1995–96 season at a time when Lemieux was again the fulcrum of Pittsburgh’s offense. The seven-point night contributed to the narrative of Lemieux as both scorer and distributor — a player capable of changing the outcome of a game not only by finding the net but by creating high-quality chances for teammates. Contemporary game reports and the official box score together allow a clear, verifiable account: Nov. 1, 1995; Pittsburgh Penguins 10, Tampa Bay Lightning 0; Mario Lemieux 1 goal, 6 assists, 7 points. ([washingtonpost.com](https://www.washingtonpost.com/archive/sports/1995/11/02/lemieuxs-7-points-sink-lightning-10-0/08a43ed1-c590-4477-841d-4d7ea634a50e/?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Pittsburgh Penguins Box Score — November 1, 1995 (Hockey-Reference)",
+        "url": "https://www.hockey-reference.com/boxscores/199511010PIT.html"
+      },
+      {
+        "title": "Lemieux's 7 Points Sink Lightning, 10-0 — The Washington Post (Nov. 2, 1995)",
+        "url": "https://www.washingtonpost.com/archive/sports/1995/11/02/lemieuxs-7-points-sink-lightning-10-0/08a43ed1-c590-4477-841d-4d7ea634a50e/"
+      },
+      {
+        "title": "NHL Records — Most Assists, One Game (NHL.com)",
+        "url": "https://records.nhl.com/records/skater-records/assists/most-assists-one-game"
+      },
+      {
+        "title": "NHL Roundup: It's All Lemieux (Los Angeles Times, Nov. 2, 1995)",
+        "url": "https://www.latimes.com/archives/la-xpm-1995-11-02-sp-63905-story.html"
+      }
+    ]
+  },
+  {
     "date": "2026-10-30",
     "event_date": "1974-10-30",
     "title": "Rumble in the Jungle: How Muhammad Ali Reclaimed the Heavyweight Crown",
