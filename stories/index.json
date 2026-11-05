@@ -1,5 +1,37 @@
 [
   {
+    "date": "2026-11-05",
+    "event_date": "2023-11-05",
+    "title": "Seventeen in São Paulo: Verstappen’s Record‑Extending Masterclass at Interlagos",
+    "sport": "Motor Racing (Formula 1)",
+    "intro": "On 5 November 2023 Max Verstappen converted pole into a commanding victory at the São Paulo Grand Prix, a result that both extended a season-long run of dominance and moved him past a major milestone on the all‑time winners list.",
+    "paragraphs": [
+      "At the Autódromo José Carlos Pace on 5 November 2023, Verstappen crossed the line first after 71 laps, ahead of Lando Norris and Fernando Alonso, to take the race win at Interlagos. The official race result lists Verstappen as the winner with a total race time of 1:56:48.894, Norris second and Alonso third — a straightforward finishing order that belied a weekend in which Red Bull controlled much of the running. ([formula1.com](https://www.formula1.com/en/results/2023/races/1224/brazil/race-result?utm_source=openai))",
+      "Beyond the victory itself, the result carried two headline records. It was Verstappen’s 17th win of the 2023 season — a single‑season total no driver had achieved before — and it was the 52nd victory of his Formula 1 career, moving him past Alain Prost into fourth place on the sport’s all‑time wins list. Both the official Formula 1 report and the sport’s governing body recorded those achievements as central outcomes of the race. ([formula1.com](https://www.formula1.com/en/latest/article/verstappen-seals-record-17th-win-of-the-season-from-norris-and-alonso-in-sao.YtQ3YtJL1IovndQffpacJ?utm_source=openai))",
+      "The season tally illuminated the scale of Verstappen and Red Bull’s advantage through 2023. Securing 17 wins in a single campaign was not only a statistical outlier but a demonstration of sustained performance across circuits and conditions. Contemporary coverage noted how the São Paulo weekend — which also featured a Sprint race and occasional startline drama — nonetheless produced another routine success for the reigning champion, underlining the gap between him and his rivals over the course of the year. ([bbc.co.uk](https://www.bbc.co.uk/sport/formula1/67327869?utm_source=openai))",
+      "Verstappen’s 52nd career victory reshaped the historical pecking order. Passing Prost to claim fourth on the list placed him among the sport’s most successful drivers by wins, and it invited immediate comparison with the drivers above him — Michael Schumacher, Lewis Hamilton and Sebastian Vettel — while also prompting discussion about how many more wins a driver in his era might realistically accumulate. Official statistics and post‑race fact files recorded the change in standing and highlighted the numerical significance of the milestone. ([formula1.com](https://www.formula1.com/en/latest/article/facts-and-stats-verstappen-passes-prost-on-wins-alonso-matches-prost-on.1tEDV098Qkh06gdQ2peRb5?utm_source=openai))",
+      "Three years on, the São Paulo result remains notable because it combined an emphatic race win with concrete, verifiable shifts in the record books. The date — 2023‑11‑05 — marks not just another Grand Prix victory but a moment when the season’s narrative and the sport’s historical ledger intersected: a single performance that simultaneously closed a chapter on one competitor’s season and altered the long view of Formula 1 achievement. ([formula1.com](https://www.formula1.com/en/latest/article/verstappen-seals-record-17th-win-of-the-season-from-norris-and-alonso-in-sao.YtQ3YtJL1IovndQffpacJ?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Max Verstappen seals record 17th win of the season from Lando Norris and Fernando Alonso in Sao Paulo Grand Prix | Formula1.com",
+        "url": "https://www.formula1.com/en/latest/article/verstappen-seals-record-17th-win-of-the-season-from-norris-and-alonso-in-sao.YtQ3YtJL1IovndQffpacJ"
+      },
+      {
+        "title": "RACE RESULT: FORMULA 1 ROLEX GRANDE PRÊMIO DE SÃO PAULO 2023 | Formula1.com (official race result)",
+        "url": "https://www.formula1.com/en/results/2023/races/1224/brazil/race-result"
+      },
+      {
+        "title": "F1 - Verstappen takes controlled São Paulo win ahead of Norris as Alonso provides final lap fireworks to take third | FIA ( Fédération Internationale de l'Automobile )",
+        "url": "https://api.fia.com/news/f1-verstappen-takes-controlled-sao-paulo-win-ahead-norris-alonso-provides-final-lap-fireworks"
+      },
+      {
+        "title": "São Paulo Grand Prix: Max Verstappen wins from Lando Norris as Fernando Alonso takes third | BBC Sport",
+        "url": "https://www.bbc.co.uk/sport/formula1/67327869"
+      }
+    ]
+  },
+  {
     "date": "2026-11-03",
     "event_date": "1962-11-03",
     "title": "When Wilt Scored 72 — A Night of Individual Brilliance in L.A.",
