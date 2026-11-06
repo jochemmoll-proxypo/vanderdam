@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-11-06",
+    "event_date": "1988-11-06",
+    "title": "Nine Times Queen of the Five Boroughs: Grete Waitz’s Lasting Masterclass in New York",
+    "sport": "Athletics (Marathon)",
+    "intro": "On November 6, 1988, the New York City Marathon produced one of its most durable records: Grete Waitz of Norway crossed the finish line in Central Park to claim her ninth victory in the race. That day confirmed a span of dominance in women’s marathon running that still stands as a benchmark in the sport.",
+    "paragraphs": [
+      "The 19th running of the TCS New York City Marathon took place on Sunday, November 6, 1988. British runner Steve Jones won the men’s elite race in 2:08:20, while Grete Waitz completed the women’s race in 2:28:07 to take the title. Official race records and contemporary reporting list those finishing times and the date explicitly in their summaries of the event. ([en.wikipedia.org](https://en.wikipedia.org/wiki/1988_New_York_City_Marathon?utm_source=openai))",
+      "What made the day exceptional was not only Waitz’s victory but its place in a sequence: it was her ninth New York City Marathon win, the most wins by any individual in the event’s history. Guinness World Records records her nine victories (1978–80, 1982–86 and 1988) as the standing mark for most wins by a female at the race, and race archives from the New York Road Runners catalog her as the 1988 champion with the 2:28:07 clocking. ([guinnessworldrecords.com](https://www.guinnessworldrecords.com/world-records/84725-most-wins-of-the-new-york-marathon-by-an-individual-female?utm_source=openai))",
+      "The 1988 victory was also a comeback of sorts. Waitz had been sidelined by injury in 1987 and returned to New York with the intention of reasserting herself among the world’s best. Her 2:28:07 on November 6 placed her back at the head of a race she had made synonymous with excellence over a decade, and it underscored the consistency and longevity that defined her career. Contemporary accounts and later retrospective features place that comeback and the 1988 win at the center of her legacy. ([latimes.com](https://www.latimes.com/archives/la-xpm-1988-11-07-sp-144-story.html?utm_source=openai))",
+      "Put in perspective, nine victories at a single major marathon is an exceptional demonstration of sustained supremacy across years in a discipline shaped by injury, variable conditions and deep international competition. Waitz’s run of wins, beginning in 1978 and extending through 1988, helped to elevate the profile of women’s distance running and set a standard for repeat success at a world-class urban marathon. Athletics historians and governing bodies highlight her New York record as one of the sport’s great single-event achievements. ([worldathletics.org](https://worldathletics.org/news/feature/grete-waitz-nine-victories-new-york-city-mara?utm_source=openai))",
+      "The November 6, 1988 race ultimately stands as Waitz’s ninth and final New York victory, a closing chapter on a unique relationship between an athlete and a race. Her nine wins remain a touchstone when writers and officials discuss dominance at a single major marathon, and the 1988 result is regularly cited in official race histories and athletics retrospectives that catalog the development of elite women’s marathon running. ([scblob.nyrr.org](https://scblob.nyrr.org/nyrrsitecoreblob/nyrr/pdf/media-guide-pdfs/2019-tcs-new-york-city-marathon-media-guide.pdf?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Remembering Waitz on the anniversary of her ninth New York Marathon victory - World Athletics",
+        "url": "https://worldathletics.org/news/feature/grete-waitz-nine-victories-new-york-city-mara"
+      },
+      {
+        "title": "Most wins of the New York Marathon by an individual (female) - Guinness World Records",
+        "url": "https://www.guinnessworldrecords.com/world-records/84725-most-wins-of-the-new-york-marathon-by-an-individual-female"
+      },
+      {
+        "title": "1988 New York City Marathon — event page and winners (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/1988_New_York_City_Marathon"
+      },
+      {
+        "title": "TCS New York City Marathon media guide / race records (New York Road Runners)",
+        "url": "https://scblob.nyrr.org/nyrrsitecoreblob/nyrr/pdf/media-guide-pdfs/2019-tcs-new-york-city-marathon-media-guide.pdf"
+      },
+      {
+        "title": "Jones, Waitz triumphant at N.Y. Marathon - Los Angeles Times (November 7, 1988)",
+        "url": "https://www.latimes.com/archives/la-xpm-1988-11-07-sp-144-story.html"
+      }
+    ]
+  },
+  {
     "date": "2026-11-05",
     "event_date": "2023-11-05",
     "title": "Seventeen in São Paulo: Verstappen’s Record‑Extending Masterclass at Interlagos",
