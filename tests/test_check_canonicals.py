@@ -37,7 +37,7 @@ class MonitorTests(unittest.TestCase):
                     'SMTP_USERNAME':'monitor', 'SMTP_PASSWORD':'test-only',
                     'SMTP_FROM':'monitor@example.com'}
         with patch.dict(m.os.environ, settings), patch.object(m.smtplib, 'SMTP') as factory:
-            client = factory.return_value.__enter__.return_value
+            client = factory.return_value
             client.send_message.return_value = {}
             m.send_alert({URL:{'title':'Example','problem':'Empty canonical'}})
             client.starttls.assert_called_once()
