@@ -51,3 +51,50 @@ met ondersteuning voor web search en structured outputs.
 `python3 -m unittest discover -s tests -v`
 
 `node --check assets/app.js`
+
+## Sportnieuws canonical monitor
+
+The **Sportnieuws canonical monitor** workflow runs hourly at minute 23 (UTC),
+with an additional manual **Run workflow** option. GitHub schedules may be delayed
+and can be disabled after prolonged repository inactivity.
+
+It reads the Sportnieuws Google News sitemap and checks only newly published
+article URLs (`/nieuws/`) from the start time in
+`monitoring/sportnieuws-state.json`. Existing articles and later edits to already
+checked articles are skipped. The homepage is not monitored. The monitor reads
+server-returned HTML; it does not execute JavaScript. A missing canonical tag or a
+missing, empty or whitespace-only canonical href triggers a second fetch to
+confirm, then one email per run listing the affected articles.
+
+Alert recipients: **Jochem.moll@persgroep.net** and **rhian.ket@persgroep.net**.
+Healthy articles cause no email. Failed article requests stay queued for retry;
+HTTP errors are not reported as empty canonicals. Alerts are marked complete only
+after SMTP accepts them; SMTP failure causes retries. If SMTP accepts an email but
+the subsequent state commit fails, a later run may repeat the alert. The news
+sitemap has a limited retention window, so long outages may leave a coverage gap.
+Workflow failures appear in GitHub Actions and should be investigated.
+
+### Configure email delivery
+
+Add these five repository secrets under **Settings > Secrets and variables >
+Actions** (never put credentials in source code or chat):
+
+| Secret | Value |
+| --- | --- |
+| `SMTP_HOST` | Your SMTP provider's hostname |
+| `SMTP_PORT` | `465` for implicit TLS or `587` for STARTTLS |
+| `SMTP_USERNAME` | SMTP login |
+| `SMTP_PASSWORD` | SMTP password or provider app password |
+| `SMTP_FROM` | A sender address authorized by your SMTP provider |
+
+The workflow deliberately fails before changing its progress state if any SMTP
+setting is missing. Once secrets are added, manually run **Sportnieuws canonical
+monitor** and inspect the result. This verifies fetching and state saving; a
+healthy run sends no email, so actual SMTP delivery is only verified when an
+alert occurs. No test email is sent automatically.
+
+Local check without sending email or changing state:
+`python3 scripts/check_canonicals.py --dry-run`.
+
+If email setup takes more than a couple of days, update `started_at` in the state
+file to the activation time to make the intended coverage start explicit.
