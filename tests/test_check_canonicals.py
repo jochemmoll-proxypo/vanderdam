@@ -46,6 +46,20 @@ class MonitorTests(unittest.TestCase):
             self.assertEqual([address for _, address in getaddresses(message.get_all('To'))], m.RECIPIENTS)
             self.assertIn(URL, message.get_content())
 
+    def test_delivery_test_is_clearly_labeled(self):
+        settings = {'SMTP_HOST':'smtp.example.com', 'SMTP_PORT':'465',
+                    'SMTP_USERNAME':'monitor', 'SMTP_PASSWORD':'test-only',
+                    'SMTP_FROM':'monitor@example.com'}
+        with patch.dict(m.os.environ, settings), patch.object(m.smtplib, 'SMTP_SSL') as factory:
+            client = factory.return_value
+            client.send_message.return_value = {}
+            m.send_alert({}, test=True)
+            message = client.send_message.call_args.args[0]
+            self.assertEqual(str(message['Subject']), '[Sportnieuws] Monitor test email')
+            self.assertIn('No canonical issue is being reported', message.get_content())
+            self.assertEqual([address for _, address in getaddresses(message.get_all('To'))], m.RECIPIENTS)
+            client.login.assert_called_once()
+
     def test_consent_redirect_is_not_treated_as_missing_canonical(self):
         response = MagicMock()
         response.url = 'https://myprivacy.dpgmedia.nl/consent'

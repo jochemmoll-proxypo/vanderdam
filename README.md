@@ -90,8 +90,10 @@ Actions** (never put credentials in source code or chat):
 The workflow deliberately fails before changing its progress state if any SMTP
 setting is missing. Once secrets are added, manually run **Sportnieuws canonical
 monitor** and inspect the result. This verifies fetching and state saving; a
-healthy run sends no email, so actual SMTP delivery is only verified when an
-alert occurs. No test email is sent automatically.
+healthy run sends no email. To verify SMTP delivery, manually run the workflow
+with **test_email** selected; it sends a clearly labeled test to both recipients
+without changing monitoring state, then runs the normal check. Scheduled runs
+never send test emails.
 
 Local check without sending email or changing state:
 `python3 scripts/check_canonicals.py --dry-run`.

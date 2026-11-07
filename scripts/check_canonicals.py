@@ -91,13 +91,17 @@ def smtp_settings():
     return port
 
 
-def send_alert(problems):
+def send_alert(problems, test=False):
     port = smtp_settings()
     message = EmailMessage()
     message['From'] = os.environ['SMTP_FROM']
     message['To'] = ', '.join(RECIPIENTS)
-    message['Subject'] = f'[Sportnieuws] Empty or missing canonical: {len(problems)} new article(s)'
+    message['Subject'] = ('[Sportnieuws] Monitor test email' if test else
+                          f'[Sportnieuws] Empty or missing canonical: {len(problems)} new article(s)')
     lines = [f'Checked at {datetime.now(timezone.utc).isoformat()}', '']
+    if test:
+        lines.append('This is a delivery test for the hourly Sportnieuws canonical monitor. '
+                     'No canonical issue is being reported. Both configured recipients receive this test.')
     for url, item in problems.items():
         lines.extend([item['title'], url, item['problem'], ''])
     message.set_content('\n'.join(lines))
@@ -170,8 +174,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--state', type=Path, default=Path('monitoring/sportnieuws-state.json'))
     parser.add_argument('--dry-run', action='store_true', help='Check without email or saving state')
+    parser.add_argument('--test-email', action='store_true', help='Send a labeled delivery test without changing monitoring state')
     args = parser.parse_args()
+    if args.test_email and args.dry_run:
+        parser.error('--test-email and --dry-run cannot be combined')
     try:
+        if args.test_email:
+            send_alert({}, test=True)
+            print('Test email accepted by SMTP for both configured recipients.')
+            return 0
         return run(args.state, args.dry_run)
     except Exception as error:
         print(f'Monitor stopped: {error}', file=sys.stderr)

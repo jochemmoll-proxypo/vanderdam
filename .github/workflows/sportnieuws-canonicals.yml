@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '23 * * * *'
   workflow_dispatch:
+    inputs:
+      test_email:
+        description: Send a labeled test email to both alert recipients
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -22,12 +27,17 @@ jobs:
       - name: Check newly published articles and email canonical alerts
         id: monitor
         env:
+          SEND_TEST_EMAIL: ${{ inputs.test_email || false }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
-        run: python scripts/check_canonicals.py
+        run: |
+          if [ "$SEND_TEST_EMAIL" = "true" ]; then
+            python scripts/check_canonicals.py --test-email
+          fi
+          python scripts/check_canonicals.py
       - name: Save checked articles and retry queue
         if: ${{ always() && steps.monitor.outcome != 'skipped' }}
         run: |
