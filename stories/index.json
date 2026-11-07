@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-11-07",
+    "event_date": "2004-11-07",
+    "title": "Three Seconds in Central Park: Paula Radcliffe’s Return and the Closest Women’s Finish in New York",
+    "sport": "Marathon (Road Running)",
+    "intro": "On 7 November 2004 Paula Radcliffe, the world marathon record-holder, returned to the international stage with a razor-thin victory in the New York City Marathon. Her 2:23:10 win over Kenya’s Susan Chepkemei (2:23:13) produced a three-second margin — the narrowest in the women’s history of the race and a dramatic corrective to a difficult year for Britain’s star.",
+    "paragraphs": [
+      "The 35th running of the ING New York City Marathon on 2004-11-07 delivered an unusually tense finish for a race decided over 42.195 kilometres. Paula Radcliffe crossed the line in 2:23:10, with Susan Chepkemei close behind at 2:23:13, according to the official New York Road Runners results and the race media guide. The men’s race that day was won by Hendrick Ramaala in 2:09:28, but it was Radcliffe’s comeback and the final sprint in Central Park that dominated international headlines.",
+      "Radcliffe arrived in New York carrying the status — and burden — of having set the women’s marathon world record the previous year (2:15:25, London, 2003). The build-up to November’s race was shaped by the disappointment of the Athens Olympics earlier that summer, where she had failed to finish; reporting at the time described the New York outing as a comeback and a chance to restore form and confidence. World Athletics and contemporary press framed the result as a return to elite road-running form for the British runner.",
+      "Race-day dynamics underlined how tactical and unpredictable championship-style marathons can be. The lead women ran together into the final miles, and what might have seemed an inevitable solo victory instead turned into a sprint for the tape. The official margin of three seconds — recorded and preserved in NYRR’s results and later media guides — made the 2004 women’s finish the narrowest in the event’s history at that time, a fact repeatedly noted by major outlets covering the race.",
+      "The tightness of Radcliffe’s win also helped underline the global depth of women’s marathon running in the early 21st century: victories and seasons were now routinely contested between world-record holders and a deep cohort from East Africa. Radcliffe’s triumph in New York became part of a broader narrative about her resilience and about the shifting competitive landscape of the marathon, in which course records and tactical battles both mattered.",
+      "That three-second margin retained a special place in race history: it was later matched, not beaten, by Mary Keitany’s three-second win over Jemima Sumgong at the 2014 New York City Marathon, according to NYRR records and the World Athletics report from that year. Rather than being eclipsed, Radcliffe’s 2004 finish stands as a defining example of how even the longest races can come down to the smallest of differences — and how one afternoon in Central Park became, for athletes and spectators alike, an indelible drama in marathon lore."
+    ],
+    "sources": [
+      {
+        "title": "Radcliffe makes successful comeback in New York - World Athletics",
+        "url": "https://worldathletics.org/news/news/radcliffe-makes-successful-comeback-in-new-yo"
+      },
+      {
+        "title": "2004 ING New York City Marathon — official results (NYRR)",
+        "url": "https://results.nyrr.org/event/a41107/finishers"
+      },
+      {
+        "title": "TCS New York City Marathon media guide (NYRR) — race records and margins (PDF)",
+        "url": "https://prodsitecore.blob.core.windows.net/nyrrsitecoreblob/nyrr/pdf/media%20guide%20pdfs/2023%20tcs%20new%20york%20city%20marathon%20media%20guide.pdf"
+      },
+      {
+        "title": "Radcliffe is quick to make amends - The Washington Post (8 November 2004)",
+        "url": "https://www.washingtonpost.com/archive/sports/2004/11/08/radcliffe-is-quick-to-make-amends/23fcad79-c86f-49d6-91bd-b9518189433e/"
+      },
+      {
+        "title": "Kipsang and Keitany win at the New York Marathon - World Athletics (report on 2014 race)",
+        "url": "https://worldathletics.org/news/report/kipsang-keitany-win-new-york-marathon"
+      }
+    ]
+  },
+  {
     "date": "2026-11-06",
     "event_date": "1988-11-06",
     "title": "Nine Times Queen of the Five Boroughs: Grete Waitz’s Lasting Masterclass in New York",
