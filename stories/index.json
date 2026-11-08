@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-11-08",
+    "event_date": "1970-11-08",
+    "title": "The Kick That Echoed for Decades: Tom Dempsey’s 63-Yard Miracle",
+    "sport": "American football",
+    "intro": "On November 8, 1970, at Tulane Stadium in New Orleans, a single kick changed how the NFL thought about distance, disability and equipment. Tom Dempsey’s 63-yard field goal as time expired not only won a game — it became one of the league’s most enduring moments, a record-setting feat that prompted new rules and remained part of football conversation for generations.",
+    "paragraphs": [
+      "With the Saints trailing the Detroit Lions 17–16 and the clock winding down, kicker Tom Dempsey lined up for a 63-yard attempt. The kick sailed through the uprights as time expired, giving New Orleans a 19–17 walk-off victory and registering as a 63-yard field goal in the official box score. The play is documented in the game box and contemporary reports as occurring on November 8, 1970, at Tulane Stadium. ([pro-football-reference.com](https://www.pro-football-reference.com/boxscores/197011080nor.htm?utm_source=openai))",
+      "Dempsey’s kick carried additional weight because of his physical circumstance: he was born without toes on his right foot and used a modified kicking shoe. That distinctive shoe and the attention it drew after the kick eventually led the league to adopt a rule addressing footwear for players with artificial limbs. The moment and its equipment-related fallout are recounted in Hall of Fame material and team histories that record both the play and the rule change that followed. ([profootballhof.com](https://www.profootballhof.com/news/moments-in-nfl-history-tom-dempsey-enters-the-record-books?utm_source=openai))",
+      "Beyond the immediate drama, the 63-yard kick entered the NFL record book as the longest successful field goal at the time. Over subsequent decades the distance was tied but not immediately surpassed; Jason Elam, Sebastian Janikowski and David Akers later matched 63 yards, and the mark stood until Matt Prater hit a 64-yarder on December 8, 2013. Official NFL records and historical summaries track the lineage of the longest kicks and note Dempsey’s place at the start of that list. ([static.www.nfl.com](https://static.www.nfl.com/league/apps/league-site/media-guides/2024/2024-Record-and-Fact-Book.pdf?utm_source=openai))",
+      "The event’s significance is layered. On the field it was an improbable, game-winning play that lifted a struggling Saints team into rare celebration; in the wider sport it forced the NFL to confront equipment and fairness questions raised by innovations born of necessity. The kick became a reference point whenever long attempts were debated, and it remained part of the league’s narrative about how single plays can prompt rulemaking. Institutional remembrances — from team pages to the Pro Football Hall of Fame — underscore both the athletic accomplishment and its regulatory echo. ([neworleanssaints.com](https://www.neworleanssaints.com/news/this-day-in-new-orleans-saints-history-november-8-17951175?utm_source=openai))",
+      "More than a half-century later, Dempsey’s November 8 moment is not just a statistic. It is a milestone in how the NFL measures extraordinary performance, a catalyst for policy, and a reminder that the history of sport is shaped as much by singular instances as by gradual trends. For fans who remember Tulane Stadium that night, and for those who study the game’s record books today, the kick remains a compact story of risk, technique and consequence — and one whose date is forever fixed in the league’s annals. ([pro-football-reference.com](https://www.pro-football-reference.com/boxscores/197011080nor.htm?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Detroit Lions at New Orleans Saints - November 8th, 1970 (box score) - Pro-Football-Reference",
+        "url": "https://www.pro-football-reference.com/boxscores/197011080nor.htm"
+      },
+      {
+        "title": "Legendary Saints kicker Tom Dempsey dies at 73 - NFL.com",
+        "url": "https://www.nfl.com/news/legendary-saints-kicker-tom-dempsey-dies-at-73-0ap3000001108372"
+      },
+      {
+        "title": "Moments in NFL History: Tom Dempsey enters the Record Books - Pro Football Hall of Fame",
+        "url": "https://www.profootballhof.com/news/moments-in-nfl-history-tom-dempsey-enters-the-record-books"
+      },
+      {
+        "title": "New Orleans Saints legend Tom Dempsey dies at 73 - NewOrleansSaints.com",
+        "url": "https://www.neworleanssaints.com/news/new-orleans-saints-legend-tom-dempsey-dies-at-73"
+      },
+      {
+        "title": "NFL Record and Fact Book (Longest Field Goal listings) - NFL operations / Record Book PDF",
+        "url": "https://static.www.nfl.com/league/apps/league-site/media-guides/2024/2024-Record-and-Fact-Book.pdf"
+      }
+    ]
+  },
+  {
     "date": "2026-11-07",
     "event_date": "2004-11-07",
     "title": "Three Seconds in Central Park: Paula Radcliffe’s Return and the Closest Women’s Finish in New York",
