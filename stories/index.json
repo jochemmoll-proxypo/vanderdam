@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-11-09",
+    "event_date": "2007-11-09",
+    "title": "On Fast Ice: Jeremy Wotherspoon’s 34.03 That Rewrote the 500m",
+    "sport": "Speed skating",
+    "intro": "On November 9, 2007, at the Utah Olympic Oval in Salt Lake City, Canada’s Jeremy Wotherspoon skated the men’s 500 metres in 34.03 seconds—an electric performance that became the official world record and a defining moment of a late-career renaissance.",
+    "paragraphs": [
+      "Jeremy Wotherspoon’s run came during the ISU World Cup stop in Salt Lake City. The Canadian, already one of the sport’s most decorated sprinters, returned to competition that season and produced an immediate statement: a 500m in 34.03 seconds that the International Skating Union later recorded as the world record for the distance. ([isu-d8g8b4b7ece7aphs.a03.azurefd.net](https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isuproduction/uploads/images/decisionsoftheisucouncil/1513-decisions-of-the-isu-council-monaco.pdf?utm_source=openai))",
+      "The Utah Olympic Oval had a reputation for ‘fast ice’—a combination of altitude, climate control and exceptional surface preparation that helped multiple skaters approach and set world-best times across events. Wotherspoon’s 34.03 was the fastest legal 500m recorded at an ISU event that day, officially logged in the World Cup results and reported in contemporary coverage of the meet. ([speedskatingnews.nl](https://speedskatingnews.nl/results/essent-isu-world-cup-salt-lake-city-2007/?v=results&utm_source=openai))",
+      "That time did not appear out of nowhere: Wotherspoon was returning to form after interruptions in his career and immediately converted opportunity into dominance on the World Cup circuit. Team Canada’s profile of Wotherspoon notes that his 34.03 came in his first race back (11/9/07) and marked the start of an outstanding run across that World Cup season. The result placed him into the record books and reinforced his reputation as the pre-eminent 500m specialist of his generation. ([olympic.ca](https://olympic.ca/team-canada/jeremy-wotherspoon/?utm_source=openai))",
+      "The record’s historical arc shows both the durability of Wotherspoon’s mark and the continuing evolution of the discipline. Wotherspoon’s 34.03 stood as the official world record until mid-November 2015, when Russia’s Pavel Kulizhnikov first lowered it to 34.00 in Calgary and then to 33.98 days later in Salt Lake City, a sequence documented by contemporary reports and World Cup result summaries. Those later reductions underline how advances in training, equipment and the same fast ice that aided Wotherspoon combined to push the event into a new era. ([en.wikipedia.org](https://en.wikipedia.org/wiki/2015%E2%80%9316_ISU_Speed_Skating_World_Cup_%E2%80%93_World_Cup_1_%E2%80%93_Men%27s_500_metres?utm_source=openai))",
+      "More than a line in the record progression, Wotherspoon’s 34.03 remains a milestone because it arrived at a moment of personal comeback and because it helped define a stretch of men’s sprint speed skating dominated by marginal gains. For fans and historians, the run of November 9, 2007 is a compact example of how place, timing and an athlete’s readiness can converge to create a moment that reshapes a sport’s benchmark—one that stood for nearly eight years and continued to influence the pursuit of speed afterward. ([olympic.ca](https://olympic.ca/team-canada/jeremy-wotherspoon/?utm_source=openai))"
+    ],
+    "sources": [
+      {
+        "title": "Decisions of the ISU Council (lists world records)",
+        "url": "https://isu-d8g8b4b7ece7aphs.a03.azurefd.net/isuproduction/uploads/images/decisionsoftheisucouncil/1513-decisions-of-the-isu-council-monaco.pdf"
+      },
+      {
+        "title": "Jeremy Wotherspoon — Team Canada profile",
+        "url": "https://olympic.ca/team-canada/jeremy-wotherspoon/"
+      },
+      {
+        "title": "World Cup results: Essent ISU World Cup Salt Lake City 2007 — SpeedSkatingNews",
+        "url": "https://speedskatingnews.nl/results/essent-isu-world-cup-salt-lake-city-2007/"
+      },
+      {
+        "title": "World records fall on fast ice — Deseret News (reporting Nov 10, 2007)",
+        "url": "https://www.deseret.com/2007/11/10/20052765/world-records-fall-on-fast-ice/"
+      },
+      {
+        "title": "Russia's Kulizhnikov breaks world 500 record — KSL / Associated Press (Nov 2015)",
+        "url": "https://www.ksl.com/article/37447556/russias-kulizhnikov-breaks-world-500-record--again"
+      },
+      {
+        "title": "World record Kulizhnikov on 500 metres — Schaatsen.nl (Dutch speed skating federation reporting)",
+        "url": "https://www.schaatsen.nl/nieuws/wereldrecord-kulizhnikov-op-500-meter/"
+      }
+    ]
+  },
+  {
     "date": "2026-11-08",
     "event_date": "1970-11-08",
     "title": "The Kick That Echoed for Decades: Tom Dempsey’s 63-Yard Miracle",
