@@ -1,4 +1,8 @@
 'use strict';
+const masthead = document.querySelector('.masthead');
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty('--header-height', `${masthead.getBoundingClientRect().height}px`);
+}).observe(masthead);
 const tz = 'Europe/Amsterdam';
 const now = new Date();
 const dateKey = new Intl.DateTimeFormat('en-CA', {timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit'}).format(now);
@@ -42,7 +46,7 @@ async function init() {
       }
     } else empty(selected === dateKey ? 'Today’s sporting history story will appear here once research and source checks are complete. In the meantime, explore earlier stories in the archive.' : 'This story is unavailable. Choose a story from the archive.');
     const archive = document.querySelector('#archive-list');
-    const filter = document.querySelector('#sport-filter');
+    const filters = [...document.querySelectorAll('#sport-filter, #header-sport-filter')];
     const count = document.querySelector('#archive-count');
     const sportKey = value => value.trim().toLocaleLowerCase('en');
     const sports = new Map();
@@ -51,13 +55,15 @@ async function init() {
       if (label && !sports.has(sportKey(label))) sports.set(sportKey(label), label);
     });
     [...sports].sort((a, b) => a[1].localeCompare(b[1], 'en')).forEach(([key, label]) => {
-      const option = el('option', label); option.value = key; filter.append(option);
+      filters.forEach(filter => {
+        const option = el('option', label); option.value = key; filter.append(option);
+      });
     });
     const renderArchive = () => {
       const selectedSport = new URLSearchParams(location.search).get('sport') || '';
       const requestedKey = sportKey(selectedSport);
       const key = sports.has(requestedKey) ? requestedKey : '';
-      filter.value = sports.has(key) ? key : '';
+      filters.forEach(filter => { filter.value = key; });
       const visible = key ? stories.filter(s => sportKey(s.sport) === key) : stories;
       archive.replaceChildren();
       count.textContent = `${visible.length} ${visible.length === 1 ? 'story' : 'stories'}${key ? ` in ${sports.get(key) || selectedSport}` : ' across all sports'}`;
@@ -70,15 +76,18 @@ async function init() {
         a.append(time, el('strong', s.title), el('span', `${s.sport} ↗`)); archive.append(a);
       });
     };
-    filter.addEventListener('change', () => {
+    filters.forEach(filter => filter.addEventListener('change', () => {
       const url = new URL(location.href);
       if (filter.value) url.searchParams.set('sport', filter.value);
       else url.searchParams.delete('sport');
+      if (filter.id === 'header-sport-filter') url.hash = 'archive';
       history.pushState(null, '', url);
       renderArchive();
-    });
+      if (filter.id === 'header-sport-filter') document.querySelector('#archive').scrollIntoView();
+    }));
     window.addEventListener('popstate', renderArchive);
     document.querySelector('#archive-controls').hidden = false;
+    document.querySelector('#header-sport-control').hidden = false;
     renderArchive();
   } catch (error) {
     empty('The stories could not be loaded. Please try again later.');
