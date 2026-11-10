@@ -41,12 +41,45 @@ async function init() {
         document.querySelector('#month-name').textContent = new Intl.DateTimeFormat('en-GB', {month: 'long', timeZone: tz}).format(new Date(`${story.date}T12:00:00Z`));
       }
     } else empty(selected === dateKey ? 'Today’s sporting history story will appear here once research and source checks are complete. In the meantime, explore earlier stories in the archive.' : 'This story is unavailable. Choose a story from the archive.');
-    const archive = document.querySelector('#archive-list'); archive.replaceChildren();
-    if (!stories.length) archive.append(el('p', 'The first page is still waiting to be written. Published stories will find their home here.', 'archive-empty'));
+    const archive = document.querySelector('#archive-list');
+    const filter = document.querySelector('#sport-filter');
+    const count = document.querySelector('#archive-count');
+    const sportKey = value => value.trim().toLocaleLowerCase('en');
+    const sports = new Map();
     stories.forEach(s => {
-      const a = el('a', null, 'archive-row'); a.href = `?story=${encodeURIComponent(s.date)}#daily`;
-      const time = el('time', formatDate(s.date)); time.dateTime = s.date; a.append(time, el('strong', s.title), el('span', `${s.sport} ↗`)); archive.append(a);
+      const label = s.sport.trim();
+      if (label && !sports.has(sportKey(label))) sports.set(sportKey(label), label);
     });
+    [...sports].sort((a, b) => a[1].localeCompare(b[1], 'en')).forEach(([key, label]) => {
+      const option = el('option', label); option.value = key; filter.append(option);
+    });
+    const renderArchive = () => {
+      const selectedSport = new URLSearchParams(location.search).get('sport') || '';
+      const requestedKey = sportKey(selectedSport);
+      const key = sports.has(requestedKey) ? requestedKey : '';
+      filter.value = sports.has(key) ? key : '';
+      const visible = key ? stories.filter(s => sportKey(s.sport) === key) : stories;
+      archive.replaceChildren();
+      count.textContent = `${visible.length} ${visible.length === 1 ? 'story' : 'stories'}${key ? ` in ${sports.get(key) || selectedSport}` : ' across all sports'}`;
+      if (!visible.length) archive.append(el('p', key ? 'No stories for this sport yet. Choose All sports to explore the archive.' : 'The first page is still waiting to be written. Published stories will find their home here.', 'archive-empty'));
+      visible.forEach(s => {
+        const params = new URLSearchParams(); params.set('story', s.date);
+        if (key) params.set('sport', key);
+        const a = el('a', null, 'archive-row'); a.href = `?${params}#daily`;
+        const time = el('time', formatDate(s.date)); time.dateTime = s.date;
+        a.append(time, el('strong', s.title), el('span', `${s.sport} ↗`)); archive.append(a);
+      });
+    };
+    filter.addEventListener('change', () => {
+      const url = new URL(location.href);
+      if (filter.value) url.searchParams.set('sport', filter.value);
+      else url.searchParams.delete('sport');
+      history.pushState(null, '', url);
+      renderArchive();
+    });
+    window.addEventListener('popstate', renderArchive);
+    document.querySelector('#archive-controls').hidden = false;
+    renderArchive();
   } catch (error) {
     empty('The stories could not be loaded. Please try again later.');
     document.querySelector('#archive-list').replaceChildren(el('p', 'The archive is temporarily unavailable.', 'archive-empty'));
