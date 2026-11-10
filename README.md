@@ -1,14 +1,56 @@
 # This Day in Sports
 
 Engelstalige sportgeschiedenis op de kalenderdatum waarop het gebeurde.
-Statische website, zonder frontend-dependencies, geschikt voor GitHub Pages.
+Next.js met Payload CMS 3 en PostgreSQL, bedoeld voor Vercel. De bestaande
+Engelse website, vormgeving en het JSON-archief blijven behouden. CMS-verhalen
+worden op publicatiedatum aan het archief toegevoegd; een gepubliceerd CMS-verhaal
+met dezelfde datum krijgt voorrang. Concepten en toekomstige CMS-verhalen zijn
+niet openbaar. Bestaande Python-research en de afzonderlijke canonical-monitor
+blijven werken.
 
 ## Lokaal ontwikkelen
 
-Gebruik de bestaande checkout; een aparte Git-worktree is niet nodig.
-Vanuit de repository: `python3 -m http.server 8000`. Open de site via die server.
-Er zijn geen installatie- of buildstappen. Verhalen staan in `stories/index.json`.
-De kalender gebruikt Europe/Amsterdam, onafhankelijk van de tijdzone van de bezoeker.
+1. Gebruik Node.js 22 of nieuwer en `npm ci`.
+2. Kopieer `.env.example` naar `.env` en configureer `DATABASE_URL` met de
+   Neon-verbindingsstring en TLS (`sslmode=require`). `POSTGRES_URL` wordt als
+   alternatief ondersteund. Gebruik een aparte ontwikkelbranch in Neon.
+3. Stel `PAYLOAD_SECRET` in op een lange willekeurige waarde, bijvoorbeeld uit
+   `openssl rand -hex 32`. Bewaar deze waarde stabiel en uitsluitend als secret.
+4. Voer `npm run migrate` uit, daarna `npm run dev`.
+5. Open `/admin` en maak de eerste beheerder aan. Doe dit direct na deployment;
+   daarna vereisen gebruikersbeheer en schrijven een ingelogde beheerder.
+
+## Vercel en Neon
+
+Koppel dit project aan deze repository met framework **Next.js**, project-root
+`.` en buildcommand `npm run build`. Verwijder eventuele oude static-site
+build/output-overrides. Gebruik Node.js 22 of 24.
+
+Stel in Vercel de volgende omgevingsvariabelen in:
+
+- `DATABASE_URL`: de bestaande Neon PostgreSQL URL met TLS, als secret.
+- `PAYLOAD_SECRET`: een lange willekeurige waarde, als secret.
+- `NEXT_PUBLIC_SERVER_URL`: `https://vanderdam.vercel.app` voor productie.
+
+Controleer welke Neon-branch bij Production hoort. Gebruik voor Preview en lokale
+ontwikkeling een aparte Neon-branch en een eigen server-URL; gebruik daar geen
+productiedatabase. Payload schema-push is uitgeschakeld, zodat een ontwikkelserver
+de database niet automatisch wijzigt.
+
+Voer de gecommitte migraties met `npm run migrate` uit tegen de bedoelde database
+vóór de deployment. Voer daarna `npm run import:stories` uit om bestaande verhalen
+ook in het CMS bewerkbaar te maken. Deze import slaat bestaande CMS-datums over
+en kan veilig opnieuw draaien. De build zelf wijzigt geen databases. Controleer na deployment
+`/`, `/stories/index.json`, `/admin` en ongeautoriseerde toegang tot `/api/users`.
+Richt de eerste beheerder direct in. Dit project biedt tekstbeheer en bronlinks;
+het gebruikt geen tijdelijke Vercel-schijf voor bestandsuploads. Er is nog geen
+mailprovider geconfigureerd; stel een Payload-emailadapter in voordat je
+wachtwoordherstel per e-mail wilt gebruiken.
+
+`npm run typecheck`, `npm run build` en
+`python3 -m unittest discover -s tests -v` controleren de applicatie en de
+bestaande automatiseringen. `index.html`, `assets/` en `stories/` blijven tevens
+beschikbaar voor de bestaande GitHub Pages-publicatie.
 
 ## Publiceren en dagelijkse research activeren
 
