@@ -1,5 +1,40 @@
 [
   {
+    "date": "2026-11-10",
+    "event_date": "1984-11-10",
+    "title": "When an Underdog Rewrote the Script: Wild Again and the Birth of the Breeders' Cup",
+    "sport": "Horse racing",
+    "intro": "On November 10, 1984, Hollywood Park staged a bold experiment that would change North American thoroughbred racing: the inaugural Breeders’ Cup World Championships. What began as a seven-race, $10 million showcase for the sport culminated in an unforgettable upset — a 31-1 shot that crossed the line first in the new flagship event and left the sport debating the result for years to come.",
+    "paragraphs": [
+      "The focal point of that first day was the $3 million Breeders’ Cup Classic, run over one and one-quarter miles. Wild Again — a four-year-old who entered the race as a 31-1 outsider — prevailed in a nose-to-head photo finish against Slew o’ Gold and Gate Dancer. The race was run in slow time, recorded at about 2:03.4, and the final placings were subject to a postrace steward’s inquiry after a bumping incident in the stretch. Stewards ultimately confirmed Wild Again as the winner and placed Gate Dancer third, a controversial decision that intensified public attention on the new event and its dramatic finale.",
+      "The larger event was striking in scale and intent. Organizers assembled seven championship races on a single national-television card and advertised a total purse pool of $10 million — a sum that, at the time, reconfigured year-end priorities for owners and trainers. Hollywood Park reported attendance in excess of 64,000 for the first running, underlining immediate public interest in a championship-style format that sought to bring the best horses from different divisions together on one day and under one roof.",
+      "November 10 produced other headline moments beyond the Classic. Royal Heroine equaled a world mark in the one-mile turf race, and the meeting featured contentious steward rulings in more than one division; Fran’s Valentine was involved in an expensive disqualification in the juvenile fillies event. Those mixed moments — brilliant performances offset by disputed finishes — helped crystallize the Breeders’ Cup’s reputation as both a sporting spectacle and a focal point for the sport’s rules and rewards.",
+      "In the decades since that first card, the Breeders’ Cup has become the defining year-end championship for North American racing, shaping divisional honors and influencing breeding and campaigning decisions. Wild Again’s upset in the inaugural Classic endures as a symbolic moment: an underdog victory that announced the Breeders’ Cup’s capacity to produce instantly indelible drama while also highlighting how a single race could alter earnings, reputations and year-end awards. The event’s success on November 10, 1984, proved the concept — and set the stage for a global series that remains central to the sport’s calendar."
+    ],
+    "sources": [
+      {
+        "title": "1984 at Hollywood Park — Breeders’ Cup official results",
+        "url": "https://www.breederscup.com/results/1984"
+      },
+      {
+        "title": "Breeders' Cup Classic (1984) — Breeders’ Cup race page",
+        "url": "https://www.breederscup.com/races/bcwc/1984/classic"
+      },
+      {
+        "title": "Breeders' Cup: Wild Again -- And Again — Washington Post, Nov. 11, 1984",
+        "url": "https://www.washingtonpost.com/archive/sports/1984/11/11/breeders-cup-wild-again-and-again/1fc7514a-2998-4072-ba28-83f2729a420d/"
+      },
+      {
+        "title": "BREEDERS' CUP : A CROWDED FIELD — Los Angeles Times (context and history of the event)",
+        "url": "https://www.latimes.com/archives/la-xpm-1987-11-15-sp-21096-story.html"
+      },
+      {
+        "title": "Breeders’ Cup Classic historical winners — The Jockey Club (graded stakes history)",
+        "url": "https://www.jockeyclub.com/factbook/Chronicle/2022_Chronicle.pdf"
+      }
+    ]
+  },
+  {
     "date": "2026-11-09",
     "event_date": "2007-11-09",
     "title": "On Fast Ice: Jeremy Wotherspoon’s 34.03 That Rewrote the 500m",
