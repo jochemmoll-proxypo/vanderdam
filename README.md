@@ -142,3 +142,30 @@ Local check without sending email or changing state:
 
 If email setup takes more than a couple of days, update `started_at` in the state
 file to the activation time to make the intended coverage start explicit.
+
+## Sport categories in the CMS
+
+Open `/admin` and choose **Sport categories** to add or rename a sport. In
+**Stories**, use the **Sport** picker to assign a category. Both website dropdowns
+read these categories, including categories without stories. Renaming a sport
+updates its website label without breaking story assignments; existing archive
+labels and old sport-filter links continue to resolve. Categories referenced by
+stories, saved versions or the static archive cannot be deleted. Unused categories
+can be deleted. Category writes require an authenticated administrator.
+
+Before deploying this change, run `npm run migrate` against the intended database.
+The sport-category migration seeds existing sports and assigns both stories and
+saved versions. It retains the legacy sport text for compatibility with the
+existing daily archive. `npm run import:stories` resolves legacy sport labels to
+categories and creates a category for an unseen sport. GitHub Pages continues to
+derive sports from its static archive; CMS category edits apply to the Next.js site.
+
+Run `npm run test:categories` for migration and Payload integration checks. It uses
+a disposable local PostgreSQL-compatible PGlite database and never the configured
+production database.
+
+For a preview with its own database, set branch-specific Preview variables
+`DATABASE_URL`, `NEXT_PUBLIC_SERVER_URL`, `PREVIEW_MIGRATIONS=true` and
+`PREVIEW_DATABASE_HOST` (the exact isolated database hostname). Vercel then runs
+pending migrations before the preview build. A hostname mismatch stops the build.
+Production builds never run this preview migration step.

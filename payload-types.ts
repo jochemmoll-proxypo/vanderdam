@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
+    sports: Sport;
     stories: Story;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -77,6 +78,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
+    sports: SportsSelect<false> | SportsSelect<true>;
     stories: StoriesSelect<false> | StoriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -145,6 +147,17 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sports".
+ */
+export interface Sport {
+  id: number;
+  name: string;
+  archiveLabel?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "stories".
  */
 export interface Story {
@@ -152,7 +165,11 @@ export interface Story {
   date: string;
   event_date: string;
   title: string;
-  sport: string;
+  /**
+   * Choose a sport, or create one in Sport categories.
+   */
+  sportCategory: number | Sport;
+  sport?: string | null;
   intro: string;
   paragraphs: {
     text: string;
@@ -194,6 +211,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'sports';
+        value: number | Sport;
       } | null)
     | ({
         relationTo: 'stories';
@@ -266,12 +287,23 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "sports_select".
+ */
+export interface SportsSelect<T extends boolean = true> {
+  name?: T;
+  archiveLabel?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "stories_select".
  */
 export interface StoriesSelect<T extends boolean = true> {
   date?: T;
   event_date?: T;
   title?: T;
+  sportCategory?: T;
   sport?: T;
   intro?: T;
   paragraphs?:

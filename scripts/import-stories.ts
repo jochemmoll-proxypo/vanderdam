@@ -1,6 +1,7 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import archive from '../stories/index.json'
+import { categoryForImport } from '../lib/sport-categories'
 
 const payload = await getPayload({ config })
 try {
@@ -11,9 +12,10 @@ try {
       overrideAccess: true, draft: true,
     })
     if (existing.docs.length) continue
+    const sportCategory = await categoryForImport(payload, story.sport)
     await payload.create({
       collection: 'stories', overrideAccess: true,
-      data: { ...story, paragraphs: story.paragraphs.map(text => ({ text })), _status: 'published' },
+      data: { ...story, sportCategory, paragraphs: story.paragraphs.map(text => ({ text })), _status: 'published' },
     })
     imported++
   }

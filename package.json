@@ -17,23 +17,26 @@
     "generate:importmap": "payload generate:importmap",
     "migrate": "payload migrate",
     "typecheck": "tsc --noEmit",
-    "import:stories": "payload run scripts/import-stories.ts"
+    "import:stories": "payload run scripts/import-stories.ts",
+    "test:categories": "node tests/run-category-tests.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.93.0",
     "@payloadcms/next": "3.93.0",
     "@payloadcms/richtext-lexical": "3.93.0",
-    "payload": "3.93.0",
+    "graphql": "^16.11.0",
     "next": "~15.4.11",
+    "payload": "3.93.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "graphql": "^16.11.0",
     "sharp": "^0.34.0"
   },
   "devDependencies": {
-    "typescript": "^5.9.0",
+    "@electric-sql/pglite": "^0.5.16",
+    "@electric-sql/pglite-socket": "^0.2.19",
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0"
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.9.0"
   }
 }
