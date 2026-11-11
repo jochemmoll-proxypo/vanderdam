@@ -13,14 +13,22 @@ document.querySelector('#day-number').textContent = dateKey.slice(-2);
 document.querySelector('#month-name').textContent = new Intl.DateTimeFormat('en-GB', {month: 'long', timeZone: tz}).format(now);
 document.querySelector('#year').textContent = now.getFullYear();
 function el(tag, text, cls) { const node = document.createElement(tag); if (text) node.textContent = text; if (cls) node.className = cls; return node; }
+function arrowIcon() {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('aria-hidden', 'true');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', 'M5 12h14M13 6l6 6-6 6');
+  svg.append(path); return svg;
+}
 function empty(message) {
   const box = document.querySelector('#story');
-  box.replaceChildren(el('p', 'TODAY IN SPORTS', 'eyebrow'), el('h2', 'The next chapter is on its way.'), el('p', message));
+  box.replaceChildren(el('h2', 'The next chapter is on its way.'), el('p', message));
+  const link = el('a', 'Explore the archive', 'read-link'); link.href = '#archive'; link.append(arrowIcon()); box.append(link);
 }
 function showStory(story) {
   const box = document.querySelector('#story');
-  box.replaceChildren(el('p', `${story.sport} / ${story.event_date.slice(0, 4)}`, 'eyebrow'), el('h2', story.title), el('p', story.intro));
-  const link = el('a', 'Read the story ↗', 'read-link'); link.href = '#article'; box.append(link);
+  box.replaceChildren(el('h2', story.title), el('p', `${story.sport} · ${story.event_date.slice(0, 4)}`, 'story-meta'), el('p', story.intro));
+  const link = el('a', 'Read the story', 'read-link'); link.href = '#article'; link.append(arrowIcon()); box.append(link);
   const article = document.querySelector('#article'); article.hidden = false;
   article.replaceChildren(el('p', `Happened on ${formatDate(story.event_date)} · Published on ${formatDate(story.date)}`, 'meta'));
   story.paragraphs.forEach(p => article.append(el('p', p)));
@@ -83,7 +91,8 @@ async function init() {
         if (key) params.set('sport', key);
         const a = el('a', null, 'archive-row'); a.href = `?${params}#daily`;
         const time = el('time', formatDate(s.date)); time.dateTime = s.date;
-        a.append(time, el('strong', s.title), el('span', `${s.sport} ↗`)); archive.append(a);
+        const sport = el('span', s.sport, 'archive-sport'); sport.append(arrowIcon());
+        a.append(time, el('strong', s.title), sport); archive.append(a);
       });
     };
     filters.forEach(filter => filter.addEventListener('change', () => {

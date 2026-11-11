@@ -10,26 +10,26 @@
   <script src="assets/app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="masthead">
     <a class="wordmark" href="./" aria-label="This Day in Sports, homepage">THIS DAY<span>IN SPORTS<span class="dot">.</span></span></a>
-    <nav aria-label="Main navigation"><div class="header-sport-control" id="header-sport-control" hidden><label class="visually-hidden" for="header-sport-filter">Filter archive by sport</label><select id="header-sport-filter" aria-controls="archive-list"><option value="">All sports</option></select></div><a href="#archive">The archive <span aria-hidden="true">↗</span></a><a href="#about">The idea</a></nav>
+    <nav aria-label="Main navigation"><div class="header-sport-control" id="header-sport-control" hidden><label class="visually-hidden" for="header-sport-filter">Filter archive by sport</label><select id="header-sport-filter" aria-controls="archive-list"><option value="">All sports</option></select></div><a href="#archive">The archive <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#about">The idea</a></nav>
   </header>
-  <main>
+  <main id="main-content">
     <div class="edition"><span>SPORTING HISTORY, DAY BY DAY</span><time id="today"></time></div>
     <section class="intro" aria-labelledby="headline">
-      <p class="eyebrow"><span class="live-dot"></span> A NEW STORY EVERY DAY</p>
       <h1 id="headline">A day like today.<br>A moment for <em>ever.</em></h1>
-      <p class="intro-copy">The records. The breakthroughs. The moments that went beyond sport. Discover what happened on this day.</p>
+      <div class="intro-aside"><p class="intro-copy">The records. The breakthroughs. The moments that went beyond sport. Discover what happened on this day.</p><a class="intro-link" href="#archive">Explore the archive <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </section>
     <section id="daily" class="daily" aria-label="Today’s story" aria-live="polite">
-      <div class="date-panel"><span>ON THIS DAY</span><strong id="day-number"></strong><span id="month-name"></span><div class="track" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="date-caption">ONE DATE. SO MUCH HISTORY.</span></div>
-      <div class="story-panel" id="story"><p class="eyebrow">TODAY IN SPORTS</p><h2>A moment back in time…</h2><p>Loading the story.</p></div>
+      <div class="date-panel"><span>ON THIS DAY</span><strong id="day-number"></strong><span id="month-name"></span><div class="track" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span class="date-caption">ONE DATE.<br>SO MUCH HISTORY.</span></div>
+      <div class="story-panel" id="story"><h2>A moment back in time…</h2><p>Loading the story.</p></div>
     </section>
-    <section id="article" class="article" hidden></section>
-    <section id="archive" class="archive"><div class="section-heading"><h2>From the archives.</h2><span>THE ARCHIVE</span></div><div class="archive-controls" id="archive-controls" hidden><label for="sport-filter">Filter by sport</label><select id="sport-filter" aria-controls="archive-list"><option value="">All sports</option></select><p id="archive-count" role="status" aria-live="polite"></p></div><div id="archive-list"><p>Loading the archive.</p></div></section>
-    <section id="about" class="about"><p class="eyebrow">THE IDEA</p><h2>The calendar moves on.<br>The stories stay.</h2><div><p>Sporting history is full of moments worth telling again. Every day, discover a story about an achievement that took place on this very date.</p><p>Our stories are researched and written with AI, with links to the sources used. Explore the facts for yourself: history deserves more than a great headline.</p></div></section>
+    <section id="article" class="article" aria-label="Full story" hidden></section>
+    <section id="archive" class="archive"><div class="section-heading"><h2>From the archives.</h2></div><div class="archive-controls" id="archive-controls" hidden><label for="sport-filter">Filter by sport</label><select id="sport-filter" aria-controls="archive-list"><option value="">All sports</option></select><p id="archive-count" role="status" aria-live="polite"></p></div><div id="archive-list"><p>Loading the archive.</p></div></section>
+    <section id="about" class="about"><h2>The calendar moves on.<br>The stories stay.</h2><div><p>Sporting history is full of moments worth telling again. Every day, discover a story about an achievement that took place on this very date.</p><p>Our stories are researched and written with AI, with links to the sources used. Explore the facts for yourself: history deserves more than a great headline.</p></div></section>
   </main>
-  <footer><a class="footer-brand" href="./">THIS DAY IN SPORTS.</a><span>A Vanderdam project · <span id="year"></span></span><a href="#about">About the stories ↑</a></footer>
+  <footer><a class="footer-brand" href="./">THIS DAY IN SPORTS.</a><span>A Vanderdam project · <span id="year"></span></span><a href="#about">About the stories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
   <noscript><p>Enable JavaScript to read the stories and explore the archive.</p></noscript>
 </body>
 </html>
