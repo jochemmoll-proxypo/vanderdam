@@ -163,3 +163,9 @@ derive sports from its static archive; CMS category edits apply to the Next.js s
 Run `npm run test:categories` for migration and Payload integration checks. It uses
 a disposable local PostgreSQL-compatible PGlite database and never the configured
 production database.
+
+For a preview with its own database, set branch-specific Preview variables
+`DATABASE_URL`, `NEXT_PUBLIC_SERVER_URL`, `PREVIEW_MIGRATIONS=true` and
+`PREVIEW_DATABASE_HOST` (the exact isolated database hostname). Vercel then runs
+pending migrations before the preview build. A hostname mismatch stops the build.
+Production builds never run this preview migration step.
