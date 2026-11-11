@@ -34,6 +34,8 @@ function showStory(story) {
 }
 async function init() {
   try {
+    const categoriesRequest = fetch('sports/index.json', {cache: 'no-cache'})
+      .then(response => response.ok ? response.json() : []).catch(() => []);
     const response = await fetch('stories/index.json', {cache: 'no-cache'}); if (!response.ok) throw new Error('Archive unavailable');
     const stories = (await response.json()).filter(s => s.date <= dateKey).sort((a,b) => b.date.localeCompare(a.date));
     const selected = new URLSearchParams(location.search).get('story') || dateKey;
@@ -50,6 +52,14 @@ async function init() {
     const count = document.querySelector('#archive-count');
     const sportKey = value => value.trim().toLocaleLowerCase('en');
     const sports = new Map();
+    const aliases = new Map();
+    const categories = await categoriesRequest;
+    if (Array.isArray(categories)) categories.forEach(category => {
+      if (typeof category.name !== 'string' || !category.name.trim()) return;
+      const key = sportKey(category.name);
+      sports.set(key, category.name.trim());
+      if (typeof category.archiveLabel === 'string') aliases.set(sportKey(category.archiveLabel), key);
+    });
     stories.forEach(s => {
       const label = s.sport.trim();
       if (label && !sports.has(sportKey(label))) sports.set(sportKey(label), label);
@@ -61,7 +71,7 @@ async function init() {
     });
     const renderArchive = () => {
       const selectedSport = new URLSearchParams(location.search).get('sport') || '';
-      const requestedKey = sportKey(selectedSport);
+      const requestedKey = aliases.get(sportKey(selectedSport)) || sportKey(selectedSport);
       const key = sports.has(requestedKey) ? requestedKey : '';
       filters.forEach(filter => { filter.value = key; });
       const visible = key ? stories.filter(s => sportKey(s.sport) === key) : stories;
