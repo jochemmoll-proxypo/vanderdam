@@ -26,6 +26,36 @@ function empty(message) {
   const link = el('a', 'Explore the archive', 'read-link'); link.href = '#archive'; link.append(arrowIcon()); box.append(link);
 }
 function showStory(story) {
+  document.querySelector('.story-header-image')?.remove();
+  if (story.headerImage) {
+    const photo = story.headerImage;
+    const safeImageURL = value => {
+      try {
+        const url = new URL(value, location.href);
+        return url.protocol === 'https:' || (url.protocol === 'http:' && url.origin === location.origin) ? url.href : null;
+      } catch { return null; }
+    };
+    const src = safeImageURL(photo.url);
+    if (src) {
+      const figure = el('figure', null, 'story-header-image');
+      const image = document.createElement('img'); image.alt = photo.alt || '';
+      image.decoding = 'async'; image.fetchPriority = 'high';
+      if (photo.width > 0 && photo.height > 0) { image.width = photo.width; image.height = photo.height; }
+      image.style.objectPosition = `${Number.isFinite(photo.focalX) ? photo.focalX : 50}% ${Number.isFinite(photo.focalY) ? photo.focalY : 50}%`;
+      const smallSrc = photo.smallUrl && safeImageURL(photo.smallUrl);
+      if (smallSrc && photo.smallWidth > 0 && photo.width > photo.smallWidth) { image.srcset = `${smallSrc} ${photo.smallWidth}w, ${src} ${photo.width}w`; image.sizes = '(max-width: 700px) calc(100vw - 40px), (max-width: 1344px) 90vw, 1200px'; }
+      image.addEventListener('error', () => figure.remove(), { once: true });
+      figure.append(image);
+      if (photo.caption || photo.credit) {
+        const caption = el('figcaption');
+        if (photo.caption) caption.append(el('span', photo.caption));
+        if (photo.credit) caption.append(el('span', photo.credit, 'image-credit'));
+        figure.append(caption);
+      }
+      document.querySelector('#daily').before(figure);
+      image.src = src;
+    }
+  }
   const box = document.querySelector('#story');
   box.replaceChildren(el('h2', story.title), el('p', `${story.sport} · ${story.event_date.slice(0, 4)}`, 'story-meta'), el('p', story.intro));
   const link = el('a', 'Read the story', 'read-link'); link.href = '#article'; link.append(arrowIcon()); box.append(link);

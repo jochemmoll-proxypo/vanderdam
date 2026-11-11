@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     users: User;
     sports: Sport;
+    media: Media;
     stories: Story;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -79,6 +80,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     sports: SportsSelect<false> | SportsSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
     stories: StoriesSelect<false> | StoriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -158,6 +160,45 @@ export interface Sport {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  /**
+   * Describe the image for readers who cannot see it.
+   */
+  alt: string;
+  caption?: string | null;
+  /**
+   * Photographer or source. Upload only images you have permission to publish.
+   */
+  credit?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    small?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "stories".
  */
 export interface Story {
@@ -170,6 +211,10 @@ export interface Story {
    */
   sportCategory: number | Sport;
   sport?: string | null;
+  /**
+   * Optional. Upload or choose an image for this story. Add alt text, a caption and photo credit in Images.
+   */
+  headerImage?: (number | null) | Media;
   intro: string;
   paragraphs: {
     text: string;
@@ -215,6 +260,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'sports';
         value: number | Sport;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: number | Media;
       } | null)
     | ({
         relationTo: 'stories';
@@ -297,6 +346,42 @@ export interface SportsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  caption?: T;
+  credit?: T;
+  prefix?: T;
+  _objectKey?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+  sizes?:
+    | T
+    | {
+        small?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "stories_select".
  */
 export interface StoriesSelect<T extends boolean = true> {
@@ -305,6 +390,7 @@ export interface StoriesSelect<T extends boolean = true> {
   title?: T;
   sportCategory?: T;
   sport?: T;
+  headerImage?: T;
   intro?: T;
   paragraphs?:
     | T

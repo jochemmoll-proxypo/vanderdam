@@ -169,3 +169,32 @@ For a preview with its own database, set branch-specific Preview variables
 `PREVIEW_DATABASE_HOST` (the exact isolated database hostname). Vercel then runs
 pending migrations before the preview build. A hostname mismatch stops the build.
 Production builds never run this preview migration step.
+
+## Story header images
+
+In `/admin`, edit a story and use **Header image** to upload or choose an image.
+The **Images** collection stores required alt text and optional captions and photo
+credits. Publish the story to display its image above the story feature on the
+Next.js site. Stories without an image retain their existing layout.
+
+JPEG, PNG, WebP and AVIF uploads up to 3 MB are supported. Images are converted
+to WebP, resized to fit within 1800 × 1200, and receive an 800px variant when large
+enough. Set the focal point in the image editor to control the website crop.
+Referenced images cannot be deleted while stories or saved versions use them.
+
+Before deploying, connect a **public Vercel Blob** store to the project and ensure
+`BLOB_READ_WRITE_TOKEN` is configured as a sensitive environment variable. Use
+a separate store/token for Preview so preview edits cannot remove production
+assets. Apply `npm run migrate` to the intended database before deployment.
+Storage fields are present regardless of whether the token is configured, so
+migrations and generated types do not depend on storage credentials.
+
+On Vercel, local disk storage is disabled. Uploads return a configuration error
+when the Blob token is missing. Local development without a token uses the
+gitignored `.local-media/` directory; `LOCAL_MEDIA_DIR` can select a different
+local directory. Keep local media out of production deployments.
+
+`npm run test:categories` includes header-image integration checks against a
+disposable local database and temporary image directory. It never uploads to
+Blob. Existing GitHub Pages publication still reads its original JSON archive;
+CMS uploads are displayed by the Next.js website.
