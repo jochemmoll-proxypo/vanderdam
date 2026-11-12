@@ -33,6 +33,8 @@ export const Stories: CollectionConfig = {
     { name: 'sportCategory', label: 'Sport', type: 'relationship', relationTo: 'sports', required: true,
       admin: { description: 'Choose a sport, or create one in Sport categories.' } },
     { name: 'sport', type: 'text', admin: { hidden: true } },
+    { name: 'headerImage', label: 'Header image', type: 'upload', relationTo: 'media',
+      admin: { description: 'Optional. Upload or choose an image for this story. Add alt text, a caption and photo credit in Images.' } },
     { name: 'intro', type: 'textarea', required: true },
     { name: 'paragraphs', type: 'array', required: true, minRows: 1, fields: [
       { name: 'text', type: 'textarea', required: true },

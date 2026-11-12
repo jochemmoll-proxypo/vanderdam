@@ -1,5 +1,7 @@
 import { PGlite } from '@electric-sql/pglite'
-import { readFileSync } from 'node:fs'
+import { readFileSync, mkdtempSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import path from 'node:path'
 import assert from 'node:assert/strict'
 import { PGLiteSocketServer } from '@electric-sql/pglite-socket'
 import { spawn } from 'node:child_process'
@@ -27,13 +29,26 @@ await db.exec('BEGIN;'+down+'COMMIT;')
 assert.equal((await db.query('SELECT count(*)::int AS n FROM stories')).rows[0].n,archive.length)
 await db.exec('BEGIN;'+up+'COMMIT;')
 assert.equal((await db.query('SELECT count(*)::int AS n FROM sports')).rows[0].n,n)
+const imageMigration=readFileSync(root+'migrations/20261111_203059_story_header_images.ts','utf8')
+const [imageUp,imageDown]=[...imageMigration.matchAll(/await db.execute\(sql`([\s\S]*?)`\)/g)].map(x=>x[1])
+await db.exec('BEGIN;'+imageUp+'COMMIT;')
+assert.equal((await db.query('SELECT count(*)::int AS n FROM stories WHERE header_image_id IS NOT NULL')).rows[0].n,0)
+await db.exec('BEGIN;'+imageDown+'COMMIT;')
+assert.equal((await db.query('SELECT count(*)::int AS n FROM stories')).rows[0].n,archive.length)
+await db.exec('BEGIN;'+imageUp+'COMMIT;')
+const discoverMigration=readFileSync(root+'migrations/20261112_075459_discover_image_size.ts','utf8')
+const [discoverUp,discoverDown]=[...discoverMigration.matchAll(/await db.execute\(sql`([\s\S]*?)`\)/g)].map(x=>x[1])
+await db.exec('BEGIN;'+discoverUp+'COMMIT;')
+await db.exec('BEGIN;'+discoverDown+'COMMIT;')
+await db.exec('BEGIN;'+discoverUp+'COMMIT;')
+const mediaDirectory=mkdtempSync(path.join(tmpdir(),'payload-image-tests-'))
 const server=new PGLiteSocketServer({db,port:0,host:'127.0.0.1',maxConnections:10})
 await server.start()
 try {
   const child=spawn(process.execPath, ['node_modules/payload/bin.js','run','tests/cms-categories.ts'], {
-    cwd:root,stdio:'inherit',env:{...process.env,DATABASE_URL:`postgresql://postgres:postgres@${server.getServerConn()}/postgres`,PAYLOAD_SECRET:'local-category-integration-test-secret',CATEGORY_TEST_DATABASE:'local-only'},
+    cwd:root,stdio:'inherit',env:{...process.env,DATABASE_URL:`postgresql://postgres:postgres@${server.getServerConn()}/postgres`,PAYLOAD_SECRET:'local-category-integration-test-secret',CATEGORY_TEST_DATABASE:'local-only',VERCEL:'',BLOB_READ_WRITE_TOKEN:'',LOCAL_MEDIA_DIR:mediaDirectory},
   })
   const code=await new Promise((resolve,reject)=>{child.on('exit',resolve);child.on('error',reject)})
   assert.equal(code,0,'CMS integration tests failed')
-} finally { await server.stop(); await db.close() }
+} finally { await server.stop(); await db.close(); rmSync(mediaDirectory,{recursive:true,force:true}) }
 console.log(`PostgreSQL migration passed: ${n} categories; ${archive.length} story assignments and versions preserved, rename, rollback and reapply.`)

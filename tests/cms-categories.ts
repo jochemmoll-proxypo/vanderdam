@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { testHeaderImages } from './header-images'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 import { sportNames, sportKey, categoryForImport } from '../lib/sport-categories'
@@ -50,5 +51,6 @@ try {
   }
   assert.equal(storyFeed.find((s: { date: string }) => s.date === '2026-01-01').sport, 'New sport')
   await payload.delete({ collection: 'sports', id: empty.id })
+  await testHeaderImages(payload, user)
   console.log('CMS integration passed: public reads, authenticated writes, category rename, populated relationships, saved versions, import mapping, new story, deletion protection and validation.')
 } finally { await payload.destroy() }

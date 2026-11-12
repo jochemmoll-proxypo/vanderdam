@@ -18,12 +18,14 @@
     "migrate": "payload migrate",
     "typecheck": "tsc --noEmit",
     "import:stories": "payload run scripts/import-stories.ts",
-    "test:categories": "node tests/run-category-tests.mjs"
+    "test:categories": "node tests/run-category-tests.mjs",
+    "regenerate:images": "payload run scripts/regenerate-story-images.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.93.0",
     "@payloadcms/next": "3.93.0",
     "@payloadcms/richtext-lexical": "3.93.0",
+    "@payloadcms/storage-vercel-blob": "^3.93.0",
     "graphql": "^16.11.0",
     "next": "~15.4.11",
     "payload": "3.93.0",

@@ -25,7 +25,64 @@ function empty(message) {
   box.replaceChildren(el('h2', 'The next chapter is on its way.'), el('p', message));
   const link = el('a', 'Explore the archive', 'read-link'); link.href = '#archive'; link.append(arrowIcon()); box.append(link);
 }
+function safeImageURL(value) {
+  if (typeof value !== 'string' || !value.trim()) return null;
+  try {
+    const url = new URL(value, location.href);
+    return url.protocol === 'https:' || (url.protocol === 'http:' && url.origin === location.origin) ? url.href : null;
+  } catch { return null; }
+}
+function openImageViewer(photo, source, trigger) {
+  const dialog = document.createElement('dialog'); dialog.className = 'image-viewer';
+  dialog.setAttribute('aria-label', 'Larger story image');
+  const close = el('button', 'Close', 'image-viewer-close'); close.type = 'button'; close.autofocus = true;
+  const picture = document.createElement('img'); picture.alt = photo.alt || ''; picture.decoding = 'async';
+  if (photo.largeWidth > 0 && photo.largeHeight > 0) { picture.width = photo.largeWidth; picture.height = photo.largeHeight; }
+  const status = el('p', 'Loading image…', 'image-viewer-status'); status.setAttribute('role', 'status');
+  picture.addEventListener('load', () => status.remove(), { once: true });
+  picture.addEventListener('error', () => { picture.remove(); status.textContent = 'The larger image could not be loaded. Close the viewer to return to the story.'; }, { once: true });
+  dialog.append(close, status, picture);
+  if (photo.caption || photo.credit) dialog.append(el('p', [photo.caption, photo.credit].filter(Boolean).join(' · '), 'image-viewer-caption'));
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.documentElement.classList.remove('image-viewer-open'); dialog.remove();
+    if (trigger.isConnected) trigger.focus({ preventScroll: true });
+  }, { once: true });
+  document.body.append(dialog); document.documentElement.classList.add('image-viewer-open');
+  dialog.showModal(); picture.src = source;
+}
 function showStory(story) {
+  document.querySelector('.story-header-image')?.remove();
+  if (story.headerImage) {
+    const photo = story.headerImage;
+    const src = safeImageURL(photo.url);
+    if (src) {
+      const figure = el('figure', null, 'story-header-image');
+      const image = document.createElement('img'); image.alt = photo.alt || '';
+      image.decoding = 'async'; image.fetchPriority = 'high';
+      if (photo.width > 0 && photo.height > 0) { image.width = photo.width; image.height = photo.height; }
+      image.style.objectPosition = `${Number.isFinite(photo.focalX) ? photo.focalX : 50}% ${Number.isFinite(photo.focalY) ? photo.focalY : 50}%`;
+      image.addEventListener('error', () => figure.remove(), { once: true });
+      const trigger = el('button', null, 'story-image-trigger'); trigger.type = 'button';
+      trigger.setAttribute('aria-label', `View larger image: ${photo.alt || story.title}`);
+      trigger.setAttribute('aria-haspopup', 'dialog');
+      trigger.append(image, el('span', 'View larger', 'story-image-hint'));
+      trigger.addEventListener('click', () => openImageViewer(photo, safeImageURL(photo.largeUrl) || src, trigger));
+      figure.append(trigger);
+      if (photo.caption || photo.credit) {
+        const caption = el('figcaption');
+        if (photo.caption) caption.append(el('span', photo.caption));
+        if (photo.credit) caption.append(el('span', photo.credit, 'image-credit'));
+        figure.append(caption);
+      }
+      document.querySelector('#daily').after(figure);
+      image.src = src;
+    }
+  }
   const box = document.querySelector('#story');
   box.replaceChildren(el('h2', story.title), el('p', `${story.sport} · ${story.event_date.slice(0, 4)}`, 'story-meta'), el('p', story.intro));
   const link = el('a', 'Read the story', 'read-link'); link.href = '#article'; link.append(arrowIcon()); box.append(link);

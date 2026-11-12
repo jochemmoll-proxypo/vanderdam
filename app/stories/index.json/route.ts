@@ -2,17 +2,20 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { sportKey, sportNames } from '../../../lib/sport-categories'
 import archive from '../../../stories/index.json'
+import { publicStoryImage } from '../../../lib/story-images'
+type PublicStory = (typeof archive)[number] & { headerImage?: ReturnType<typeof publicStoryImage> }
 export const dynamic = 'force-dynamic'
 export async function GET() {
   const payload = await getPayload({ config })
   const result = await payload.find({ collection: 'stories', overrideAccess: false, pagination: false, depth: 1 })
   const categories = await payload.find({ collection: 'sports', overrideAccess: false, pagination: false, depth: 0 })
   const names = sportNames(categories.docs)
-  const stories = new Map(archive.map(story => [story.date, { ...story, sport: names.get(sportKey(story.sport)) || story.sport }]))
+  const stories = new Map<string, PublicStory>(archive.map(story => [story.date, { ...story, sport: names.get(sportKey(story.sport)) || story.sport }]))
   for (const story of result.docs) {
     stories.set(story.date, {
       date: story.date, event_date: story.event_date, title: story.title,
       sport: typeof story.sportCategory === 'object' && story.sportCategory ? story.sportCategory.name : (names.get(sportKey(story.sport || '')) || story.sport || 'Uncategorized'), intro: story.intro,
+      headerImage: publicStoryImage(story.headerImage),
       paragraphs: story.paragraphs.map(p => p.text),
       sources: story.sources.map(s => ({ title: s.title, url: s.url })),
     })
