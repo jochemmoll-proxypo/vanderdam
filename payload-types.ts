@@ -165,7 +165,7 @@ export interface Sport {
 export interface Media {
   id: number;
   /**
-   * Describe the image for readers who cannot see it.
+   * Describe the image for readers who cannot see it. Upload at least 1200 × 800 pixels; the header uses a 1200 × 800 crop.
    */
   alt: string;
   caption?: string | null;
@@ -187,6 +187,14 @@ export interface Media {
   focalX?: number | null;
   focalY?: number | null;
   sizes?: {
+    discover?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
     small?: {
       url?: string | null;
       width?: number | null;
@@ -368,6 +376,16 @@ export interface MediaSelect<T extends boolean = true> {
   sizes?:
     | T
     | {
+        discover?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
         small?:
           | T
           | {

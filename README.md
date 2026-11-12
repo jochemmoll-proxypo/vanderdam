@@ -178,7 +178,7 @@ credits. Publish the story to display its image below the story feature on the
 Next.js site. Stories without an image retain their existing layout.
 
 JPEG, PNG, WebP and AVIF uploads up to 3 MB are supported. Images are converted
-to WebP, resized to fit within 1800 × 1200, and receive an 800px variant when large
+to WebP, resized to fit within 2400 × 1600, and receive an 800px variant when large
 enough. Set the focal point in the image editor to control the website crop.
 Referenced images cannot be deleted while stories or saved versions use them.
 
@@ -198,3 +198,23 @@ local directory. Keep local media out of production deployments.
 disposable local database and temporary image directory. It never uploads to
 Blob. Existing GitHub Pages publication still reads its original JSON archive;
 CMS uploads are displayed by the Next.js website.
+
+### Larger image viewer and Google image previews
+
+Click the story image, or focus it and press Enter, to open its larger source in a
+modal. Escape, Close and clicking outside the modal close it and restore focus.
+The background stays fixed while the modal is open.
+
+New uploads must be at least 1200 × 800 pixels. Payload produces a distinct
+1200 × 800 WebP header crop and retains a larger source (up to 2400 × 1600) for
+the viewer. The header's actual file and intrinsic dimensions are 1200 × 800 on
+all viewports. Focal points determine the crop. Story pages provide server-rendered
+Open Graph image metadata and `max-image-preview:large` for Google. These settings
+do not guarantee inclusion in Discover.
+
+Apply the included discover-image migration. For existing Blob images, run
+`npm run regenerate:images` against the intended database and matching Blob store.
+It skips already-generated variants and reports sources that need larger
+replacements. On an isolated preview with migrations enabled, setting the
+branch-specific `PREVIEW_REGENERATE_IMAGES=true` runs this idempotent step before
+building. Production builds do not regenerate images automatically.

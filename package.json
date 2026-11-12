@@ -18,7 +18,8 @@
     "migrate": "payload migrate",
     "typecheck": "tsc --noEmit",
     "import:stories": "payload run scripts/import-stories.ts",
-    "test:categories": "node tests/run-category-tests.mjs"
+    "test:categories": "node tests/run-category-tests.mjs",
+    "regenerate:images": "payload run scripts/regenerate-story-images.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.93.0",

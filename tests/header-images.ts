@@ -2,10 +2,12 @@ import assert from 'node:assert/strict'
 import type { Payload } from 'payload'
 import type { User } from '../payload-types'
 import sharp from 'sharp'
+import path from 'node:path'
+import { generateMetadata } from '../app/(website)/page'
 import { GET as getStories } from '../app/stories/index.json/route'
 
 export async function testHeaderImages(payload: Payload, user: User & { collection: 'users' }) {
-  const data = await sharp({ create: { width: 1200, height: 600, channels: 3, background: '#182d29' } }).png().toBuffer()
+  const data = await sharp({ create: { width: 1800, height: 1200, channels: 3, background: '#182d29' } }).png().toBuffer()
   const file = { data, name: 'header-test.png', mimetype: 'image/png', size: data.length }
   await assert.rejects(payload.create({ collection: 'media', overrideAccess: false, data: { alt: 'Unauthorized' }, file }))
   const wasVercel = process.env.VERCEL
@@ -16,7 +18,10 @@ export async function testHeaderImages(payload: Payload, user: User & { collecti
   const media = await payload.create({ collection: 'media', overrideAccess: false, user, data: { alt: 'A test sports image', caption: 'Test caption', credit: 'Test photographer' }, file })
   assert(media.url?.includes('/api/media/file/'))
   assert.equal(media.mimeType, 'image/webp')
-  assert.equal(media.width, 1200)
+  assert.equal(media.width, 1800)
+  const actual = await sharp(path.join(process.env.LOCAL_MEDIA_DIR!, media.sizes!.discover!.filename!)).metadata()
+  assert.equal(actual.width, 1200)
+  assert.equal(actual.height, 800)
   assert(media.sizes?.small?.url)
   const story = (await payload.find({ collection: 'stories', pagination: false, overrideAccess: true })).docs[0]
   await payload.update({ collection: 'stories', id: story.id, data: { headerImage: media.id, _status: 'published' } })
@@ -26,12 +31,18 @@ export async function testHeaderImages(payload: Payload, user: User & { collecti
   assert.equal(rendered.headerImage.caption, 'Test caption')
   assert.equal(rendered.headerImage.credit, 'Test photographer')
   assert.equal(rendered.headerImage.width, 1200)
+  assert.equal(rendered.headerImage.height, 800)
+  assert.equal(rendered.headerImage.largeWidth, 1800)
+  const metadata = await generateMetadata({ searchParams: Promise.resolve({ story: story.date }) })
+  assert.equal((metadata.openGraph?.images as { width: number }[])[0].width, 1200)
   assert.equal(rendered.headerImage.smallWidth, 800)
   await assert.rejects(payload.delete({ collection: 'media', id: media.id }), /used by a story/)
   await assert.rejects(payload.update({ collection: 'media', id: media.id, overrideAccess: false, data: { alt: 'Unauthorized' } }))
   await assert.rejects(payload.create({ collection: 'media', data: { alt: '   ' }, file }))
   await assert.rejects(payload.create({ collection: 'media', data: { alt: 'SVG' }, file: { data: Buffer.from('<svg></svg>'), name: 'unsafe.svg', mimetype: 'image/svg+xml', size: 11 } }))
   await assert.rejects(payload.create({ collection: 'media', data: { alt: 'Oversize' }, file: { ...file, size: 3 * 1024 * 1024 + 1 } }), /smaller than 3 MB/)
+  const tiny = await sharp({ create: { width: 600, height: 400, channels: 3, background: '#182d29' } }).png().toBuffer()
+  await assert.rejects(payload.create({ collection: 'media', data: { alt: 'Too small' }, file: { data: tiny, name: 'small.png', mimetype: 'image/png', size: tiny.length } }), /at least 1200/)
   const unused = await payload.create({ collection: 'media', data: { alt: 'Unused image' }, file: { ...file, name: 'unused.png' } })
   await payload.delete({ collection: 'media', id: unused.id })
   await payload.update({ collection: 'stories', id: story.id, data: { headerImage: null, _status: 'published' } })

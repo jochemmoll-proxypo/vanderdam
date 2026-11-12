@@ -1,4 +1,32 @@
 import Script from "next/script"
+import type { Metadata } from 'next'
+import { getPayload } from 'payload'
+import config from '@payload-config'
+import archive from '../../stories/index.json'
+import { publicStoryImage } from '../../lib/story-images'
+
+export const dynamic = 'force-dynamic'
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ story?: string }> }): Promise<Metadata> {
+  const params = await searchParams
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Amsterdam', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date())
+  const date = params.story || today
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date > today) return {}
+  const payload = await getPayload({ config })
+  const result = await payload.find({ collection: 'stories', where: { date: { equals: date } }, overrideAccess: false, depth: 1, limit: 1 })
+  const story = result.docs[0] || archive.find(item => item.date === date)
+  if (!story) return {}
+  const image = 'headerImage' in story ? publicStoryImage(story.headerImage) : null
+  const siteURL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+  const imageURL = image ? new URL(image.url, siteURL).href : null
+  return {
+    title: `${story.title} — This Day in Sports`, description: story.intro,
+    alternates: { canonical: new URL(`/?story=${date}`, siteURL).href },
+    openGraph: { type: 'article', title: story.title, description: story.intro,
+      ...(image && imageURL ? { images: [{ url: imageURL, width: image.width || 1200, height: image.height || 800, alt: image.alt }] } : {}),
+    },
+    twitter: { card: imageURL ? 'summary_large_image' : 'summary', title: story.title, ...(imageURL ? { images: [imageURL] } : {}) },
+  }
+}
 
 export default function Home() {
   return <>

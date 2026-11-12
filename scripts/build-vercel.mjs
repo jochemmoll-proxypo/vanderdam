@@ -14,5 +14,6 @@ if (process.env.VERCEL_ENV === 'preview' && process.env.PREVIEW_MIGRATIONS === '
     throw new Error('Preview migrations require DATABASE_URL to match PREVIEW_DATABASE_HOST.')
   }
   run('migrate', ['--', '--force-accept-warning'])
+  if (process.env.PREVIEW_REGENERATE_IMAGES === 'true') run('regenerate:images')
 }
 run('build')
