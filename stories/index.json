@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-11-12",
+    "event_date": "1964-11-12",
+    "title": "Snell’s November Surge: How Peter Snell Lowered the 1000m World Record in Auckland",
+    "sport": "Athletics",
+    "intro": "On 12 November 1964, less than a month after his double gold at the Tokyo Olympics, New Zealand middle-distance ace Peter Snell ran 2:16.6 for 1000 metres in Auckland — a time ratified as a world record that July-to-November season. The performance is notable both for its timing in Snell’s glittering 1964 campaign and for its place in the progression of the 1000m world record.",
+    "paragraphs": [
+      "Peter Snell’s 2:16.6 at Western Springs in Auckland on 12 November 1964 was recorded and acknowledged by the sport’s governing bodies as a world record for the men’s 1000 metres. Official athletics records and contemporary compilations list the performance with that exact time, venue and date, marking it as one of the four world records Snell set over his career. ([worldathletics.org](https://worldathletics.org/heritage/news/peter-snell-world-record-plaques?utm_source=openai))",
+      "The mark represented a tenth of a second improvement on the previous recognised world best of 2:16.7, set four years earlier by East German runner Siegfried Valentin in Potsdam (19 July 1960). Progression tables maintained by athletics statisticians and by World Athletics’ historical records show Snell’s performance as the next step in the official world-record progression for the 1000m. ([en.wikipedia.org](https://en.wikipedia.org/wiki/1000_metres_world_record_progression))",
+      "Snell arrived in Auckland on the crest of an extraordinary season: at the Tokyo Olympics in October 1964 he had won both the 800m and the 1500m, cementing his status among the era’s supreme middle-distance runners. Barely weeks after those Olympic victories he produced the 1000m world record on home soil — a demonstration of speed and endurance that linked his Olympic triumphs to his domestic performances. Contemporary profiles and later overviews of his career place the Auckland record in that immediate post‑Olympic context. ([olympedia.org](https://www.olympedia.org/athletes/74357?utm_source=openai))",
+      "The month of November 1964 was particularly productive for Snell: he lowered the 1000m world mark on 12 November and then, five days later, improved the mile world record — underscoring an uncommon late-season peak. World Athletics’ heritage material and historical record compilations note both achievements as occurring in the same November window in Auckland. ([worldathletics.org](https://worldathletics.org/heritage/news/peter-snell-world-record-plaques?utm_source=openai))",
+      "Although Snell’s 1000m record was marginally quicker than the previous mark, it is significant for its timing and for the stature of the athlete who set it. Snell’s November 1964 performances linked Olympic gold to world‑record running at a time when international middle-distance standards were rapidly evolving; the record stood in the official progression until it was lowered again the following summer. Statistical records show Jürgen May of East Germany reducing the listed mark to 2:16.2 on 20 July 1965, illustrating how Snell’s run was both a peak and a waypoint in a competitive era for middle-distance running. ([en.wikipedia.org](https://en.wikipedia.org/wiki/1000_metres_world_record_progression))"
+    ],
+    "sources": [
+      {
+        "title": "Peter Snell world-record plaques (World Athletics Heritage)",
+        "url": "https://worldathletics.org/heritage/news/peter-snell-world-record-plaques"
+      },
+      {
+        "title": "1000 metres world record progression (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/1000_metres_world_record_progression"
+      },
+      {
+        "title": "Peter Snell — Olympedia athlete profile",
+        "url": "https://www.olympedia.org/athletes/74357"
+      },
+      {
+        "title": "Sir Peter Snell (Athletics New Zealand)",
+        "url": "https://athletics.org.nz/legends/sir-peter-snell/"
+      },
+      {
+        "title": "Progression of IAAF world records (IAAF / World Athletics PDF)",
+        "url": "https://iaaf-ebooks.s3.amazonaws.com/2015/Progression-of-IAAF-World-Records-2015/projet/IAAF-WRPB-2015.pdf"
+      }
+    ]
+  },
+  {
     "date": "2026-11-11",
     "event_date": "2002-11-11",
     "title": "A Quiet Mid‑November Milestone: When Barry Bonds Collected His Fifth MVP",
