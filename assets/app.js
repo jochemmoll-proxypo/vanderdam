@@ -52,7 +52,7 @@ function showStory(story) {
         if (photo.credit) caption.append(el('span', photo.credit, 'image-credit'));
         figure.append(caption);
       }
-      document.querySelector('#daily').before(figure);
+      document.querySelector('#daily').after(figure);
       image.src = src;
     }
   }

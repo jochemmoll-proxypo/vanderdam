@@ -174,7 +174,7 @@ Production builds never run this preview migration step.
 
 In `/admin`, edit a story and use **Header image** to upload or choose an image.
 The **Images** collection stores required alt text and optional captions and photo
-credits. Publish the story to display its image above the story feature on the
+credits. Publish the story to display its image below the story feature on the
 Next.js site. Stories without an image retain their existing layout.
 
 JPEG, PNG, WebP and AVIF uploads up to 3 MB are supported. Images are converted
