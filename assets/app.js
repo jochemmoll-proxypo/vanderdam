@@ -149,7 +149,17 @@ async function init() {
         const a = el('a', null, 'archive-row'); a.href = `?${params}#daily`;
         const time = el('time', formatDate(s.date)); time.dateTime = s.date;
         const sport = el('span', s.sport, 'archive-sport'); sport.append(arrowIcon());
-        a.append(time, el('strong', s.title), sport); archive.append(a);
+        const storyTitle = el('span', null, 'archive-story');
+        const thumbnailURL = safeImageURL(s.headerImage?.smallUrl) || safeImageURL(s.headerImage?.url);
+        if (thumbnailURL) {
+          const thumbnail = document.createElement('img'); thumbnail.className = 'archive-thumbnail';
+          thumbnail.alt = ''; thumbnail.width = 96; thumbnail.height = 64;
+          thumbnail.loading = 'lazy'; thumbnail.decoding = 'async';
+          thumbnail.addEventListener('error', () => thumbnail.remove(), { once: true });
+          thumbnail.src = thumbnailURL; storyTitle.append(thumbnail);
+        }
+        storyTitle.append(el('strong', s.title));
+        a.append(time, storyTitle, sport); archive.append(a);
       });
     };
     filters.forEach(filter => filter.addEventListener('change', () => {
